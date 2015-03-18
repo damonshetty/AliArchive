@@ -10,7 +10,6 @@ namespace AliArchive.Controllers
     {
         public ActionResult Index()
         {
-
             return View();
         }
 
