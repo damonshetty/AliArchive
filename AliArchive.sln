@@ -3,25 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AliArchive.Repository", "AliArchive.Repository\AliArchive.Repository.csproj", "{FD10AABD-061C-4D6D-A524-C6BC6A2D1389}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AliArchive.Controllers", "AliArchive.Controllers\AliArchive.Controllers.csproj", "{5E5AB059-F032-4A7D-BB84-BE5B089A0E67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AliArchive.Model", "AliArchive.Model\AliArchive.Model.csproj", "{43CA856C-FA3D-4416-ACB0-1FA8FE2FD7DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AliArchive.Infrastructure", "AliArchive.Infrastructure\AliArchive.Infrastructure.csproj", "{7A278467-24CC-4836-A8E3-9A33818A18BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AliArchive.Service", "AliArchive.Service\AliArchive.Service.csproj", "{56EEADEA-A36B-4345-BE82-0C0D4CBD8752}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AliArchive.Model", "AliArchive.Model\AliArchive.Model.csproj", "{8FEBA1EC-72B1-4576-94E1-11B50CCDD84A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AliArchive.Presentation", "AliArchive.Presentation\AliArchive.Presentation.csproj", "{0C0288DF-E3E2-438D-9AA3-3BC5E99BBB90}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AliArchive.Repository.EntityFramework", "AliArchive.Repository.EntityFramework\AliArchive.Repository.EntityFramework.csproj", "{3D61FA13-6683-423D-8148-5CBC3649ADF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AliArchive.WebUI", "AliArchive.WebUI\AliArchive.WebUI.csproj", "{D5426197-91E7-4155-B22C-76799394A132}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AliArchive.Services", "AliArchive.Services\AliArchive.Services.csproj", "{6034A1A4-5A8F-4C69-878D-E15E79056037}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Data Access Layer", "1. Data Access Layer", "{890021B2-8433-46E3-8D6D-19791D5A89D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AliArchive.Services.Cache", "AliArchive.Services.Cache\AliArchive.Services.Cache.csproj", "{E4A8809B-D148-415E-8BD0-2FD603652A50}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Business Logic Layer", "2. Business Logic Layer", "{D8967F71-32FE-496D-BC61-6BD2E5CDE13A}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.  Service Layer", "3.  Service Layer", "{F94334E2-625A-4F7E-AD74-35DB9947935D}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Presentation Layer", "4. Presentation Layer", "{E8E66C3D-48CE-414F-9ADB-FFFAD1A82706}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. User Experience Layer", "5. User Experience Layer", "{E27213A8-E172-43B3-BC52-98791B67768E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AliArchive.UI.Web.MVC", "AliArchive.UI.Web.MVC\AliArchive.UI.Web.MVC.csproj", "{3AD5DB1C-8BFA-4744-8F9F-D8C43FF00693}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,35 +23,36 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FD10AABD-061C-4D6D-A524-C6BC6A2D1389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FD10AABD-061C-4D6D-A524-C6BC6A2D1389}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FD10AABD-061C-4D6D-A524-C6BC6A2D1389}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FD10AABD-061C-4D6D-A524-C6BC6A2D1389}.Release|Any CPU.Build.0 = Release|Any CPU
-		{43CA856C-FA3D-4416-ACB0-1FA8FE2FD7DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{43CA856C-FA3D-4416-ACB0-1FA8FE2FD7DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{43CA856C-FA3D-4416-ACB0-1FA8FE2FD7DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{43CA856C-FA3D-4416-ACB0-1FA8FE2FD7DA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{56EEADEA-A36B-4345-BE82-0C0D4CBD8752}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{56EEADEA-A36B-4345-BE82-0C0D4CBD8752}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{56EEADEA-A36B-4345-BE82-0C0D4CBD8752}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{56EEADEA-A36B-4345-BE82-0C0D4CBD8752}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0C0288DF-E3E2-438D-9AA3-3BC5E99BBB90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0C0288DF-E3E2-438D-9AA3-3BC5E99BBB90}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0C0288DF-E3E2-438D-9AA3-3BC5E99BBB90}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0C0288DF-E3E2-438D-9AA3-3BC5E99BBB90}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D5426197-91E7-4155-B22C-76799394A132}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D5426197-91E7-4155-B22C-76799394A132}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D5426197-91E7-4155-B22C-76799394A132}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D5426197-91E7-4155-B22C-76799394A132}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E5AB059-F032-4A7D-BB84-BE5B089A0E67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E5AB059-F032-4A7D-BB84-BE5B089A0E67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E5AB059-F032-4A7D-BB84-BE5B089A0E67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E5AB059-F032-4A7D-BB84-BE5B089A0E67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A278467-24CC-4836-A8E3-9A33818A18BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A278467-24CC-4836-A8E3-9A33818A18BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A278467-24CC-4836-A8E3-9A33818A18BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A278467-24CC-4836-A8E3-9A33818A18BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FEBA1EC-72B1-4576-94E1-11B50CCDD84A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FEBA1EC-72B1-4576-94E1-11B50CCDD84A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FEBA1EC-72B1-4576-94E1-11B50CCDD84A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FEBA1EC-72B1-4576-94E1-11B50CCDD84A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D61FA13-6683-423D-8148-5CBC3649ADF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D61FA13-6683-423D-8148-5CBC3649ADF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D61FA13-6683-423D-8148-5CBC3649ADF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D61FA13-6683-423D-8148-5CBC3649ADF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6034A1A4-5A8F-4C69-878D-E15E79056037}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6034A1A4-5A8F-4C69-878D-E15E79056037}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6034A1A4-5A8F-4C69-878D-E15E79056037}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6034A1A4-5A8F-4C69-878D-E15E79056037}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4A8809B-D148-415E-8BD0-2FD603652A50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4A8809B-D148-415E-8BD0-2FD603652A50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4A8809B-D148-415E-8BD0-2FD603652A50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4A8809B-D148-415E-8BD0-2FD603652A50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AD5DB1C-8BFA-4744-8F9F-D8C43FF00693}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AD5DB1C-8BFA-4744-8F9F-D8C43FF00693}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AD5DB1C-8BFA-4744-8F9F-D8C43FF00693}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AD5DB1C-8BFA-4744-8F9F-D8C43FF00693}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{FD10AABD-061C-4D6D-A524-C6BC6A2D1389} = {890021B2-8433-46E3-8D6D-19791D5A89D4}
-		{43CA856C-FA3D-4416-ACB0-1FA8FE2FD7DA} = {D8967F71-32FE-496D-BC61-6BD2E5CDE13A}
-		{56EEADEA-A36B-4345-BE82-0C0D4CBD8752} = {F94334E2-625A-4F7E-AD74-35DB9947935D}
-		{0C0288DF-E3E2-438D-9AA3-3BC5E99BBB90} = {E8E66C3D-48CE-414F-9ADB-FFFAD1A82706}
-		{D5426197-91E7-4155-B22C-76799394A132} = {E27213A8-E172-43B3-BC52-98791B67768E}
 	EndGlobalSection
 EndGlobal

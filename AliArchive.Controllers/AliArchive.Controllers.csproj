@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8FEBA1EC-72B1-4576-94E1-11B50CCDD84A}</ProjectGuid>
+    <ProjectGuid>{5E5AB059-F032-4A7D-BB84-BE5B089A0E67}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AliArchive.Model</RootNamespace>
-    <AssemblyName>AliArchive.Model</AssemblyName>
+    <RootNamespace>AliArchive.Controllers</RootNamespace>
+    <AssemblyName>AliArchive.Controllers</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,6 +32,10 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +49,14 @@
     <ProjectReference Include="..\AliArchive.Infrastructure\AliArchive.Infrastructure.csproj">
       <Project>{7a278467-24cc-4836-a8e3-9a33818a18bf}</Project>
       <Name>AliArchive.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AliArchive.Model\AliArchive.Model.csproj">
+      <Project>{8feba1ec-72b1-4576-94e1-11b50ccdd84a}</Project>
+      <Name>AliArchive.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AliArchive.Services\AliArchive.Services.csproj">
+      <Project>{6034a1a4-5a8f-4c69-878d-e15e79056037}</Project>
+      <Name>AliArchive.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

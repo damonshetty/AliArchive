@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AliArchive.Model")]
+[assembly: AssemblyTitle("AliArchive.Infrastructure")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("AliArchive.Model")]
+[assembly: AssemblyProduct("AliArchive.Infrastructure")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("a0dc2be8-dde2-4ba3-b463-524f3e18ea5b")]
+[assembly: Guid("5f491d6a-c6b8-49ea-a789-bad83088c112")]
 
 // Version information for an assembly consists of the following four values:
 //
