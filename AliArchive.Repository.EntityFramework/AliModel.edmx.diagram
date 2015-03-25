@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8a5a050da396455caebeac053948d7f8" Name="Diagram1">
+        <EntityTypeShape EntityType="AliModel.Actor" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AliModel.Belt" Width="1.5" PointX="1.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AliModel.City" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="AliModel.Country" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AliModel.DeerLake" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AliModel.Fact" Width="1.5" PointX="7.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AliModel.Fight" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AliModel.FightReferee" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AliModel.Quiz" Width="1.5" PointX="5.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AliModel.Result" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AliModel.Round" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AliModel.State" Width="1.5" PointX="3" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="AliModel.Title" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AliModel.Venue" Width="1.5" PointX="3" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AliModel.Exibition" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="AliModel.FK_Actors_Title" ManuallyRouted="false" />
+        <AssociationConnector Association="AliModel.FK_FightOpponent_Actor" ManuallyRouted="false" />
+        <AssociationConnector Association="AliModel.FK_FightReferee_Actor" ManuallyRouted="false" />
+        <AssociationConnector Association="AliModel.FK_Fight_City" ManuallyRouted="false" />
+        <AssociationConnector Association="AliModel.FK_Fight_Country1" ManuallyRouted="false" />
+        <AssociationConnector Association="AliModel.FK_Fight_Round" ManuallyRouted="false" />
+        <AssociationConnector Association="AliModel.FK_Fight_State" ManuallyRouted="false" />
+        <AssociationConnector Association="AliModel.FK_Fight_Venue" ManuallyRouted="false" />
+        <AssociationConnector Association="AliModel.FightBelt" ManuallyRouted="false" />
+        <AssociationConnector Association="AliModel.FightJudge" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
