@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AliArchive.Repository.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,11 @@ namespace AliArchive.UI.Web.MVC.Controllers
     {
         public ActionResult Index()
         {
+            //DBContext
+            AliDBContext db = new AliDBContext();
+
+            
+
             return View();
         }
 

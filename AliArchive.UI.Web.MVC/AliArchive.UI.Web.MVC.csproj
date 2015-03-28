@@ -237,6 +237,32 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AliArchive.Controllers\AliArchive.Controllers.csproj">
+      <Project>{5e5ab059-f032-4a7d-bb84-be5b089a0e67}</Project>
+      <Name>AliArchive.Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AliArchive.Infrastructure\AliArchive.Infrastructure.csproj">
+      <Project>{7a278467-24cc-4836-a8e3-9a33818a18bf}</Project>
+      <Name>AliArchive.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AliArchive.Model\AliArchive.Model.csproj">
+      <Project>{8feba1ec-72b1-4576-94e1-11b50ccdd84a}</Project>
+      <Name>AliArchive.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AliArchive.Repository.EntityFramework\AliArchive.Repository.EntityFramework.csproj">
+      <Project>{3d61fa13-6683-423d-8148-5cbc3649adf7}</Project>
+      <Name>AliArchive.Repository.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AliArchive.Services.Cache\AliArchive.Services.Cache.csproj">
+      <Project>{e4a8809b-d148-415e-8bd0-2fd603652a50}</Project>
+      <Name>AliArchive.Services.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AliArchive.Services\AliArchive.Services.csproj">
+      <Project>{6034a1a4-5a8f-4c69-878d-e15e79056037}</Project>
+      <Name>AliArchive.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
