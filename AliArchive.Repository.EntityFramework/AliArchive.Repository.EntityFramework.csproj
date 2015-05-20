@@ -55,7 +55,6 @@
     <Compile Include="Actor.cs">
       <DependentUpon>AliModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="AliRepository.cs" />
     <Compile Include="AliModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -71,6 +70,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AliModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="AliRepository.cs" />
+    <Compile Include="AmateurFight.cs">
+      <DependentUpon>AliModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Belt.cs">
       <DependentUpon>AliModel.tt</DependentUpon>
     </Compile>
@@ -83,7 +86,7 @@
     <Compile Include="DeerLake.cs">
       <DependentUpon>AliModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Exibition.cs">
+    <Compile Include="ExibitionFight.cs">
       <DependentUpon>AliModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Fact.cs">
@@ -92,21 +95,18 @@
     <Compile Include="Fight.cs">
       <DependentUpon>AliModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="FightReferee.cs">
-      <DependentUpon>AliModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Province.cs">
+      <DependentUpon>AliModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Quiz.cs">
       <DependentUpon>AliModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Result.cs">
-      <DependentUpon>AliModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Round.cs">
-      <DependentUpon>AliModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="State.cs">
+      <DependentUpon>AliModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
       <DependentUpon>AliModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Title.cs">

@@ -29,6 +29,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DeployEncryptKey>Encryption password is used only if any deployment setting is marked as secure</DeployEncryptKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -40,6 +41,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -103,9 +108,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -171,32 +173,122 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Icon.png" />
+    <Content Include="Images\ali1.jpg" />
+    <Content Include="Images\ali10.jpg" />
+    <Content Include="Images\ali11.jpg" />
+    <Content Include="Images\ali12.jpg" />
+    <Content Include="Images\ali13.jpg" />
+    <Content Include="Images\ali14.jpg" />
+    <Content Include="Images\ali15.jpg" />
+    <Content Include="Images\ali16.jpg" />
+    <Content Include="Images\ali17.jpg" />
+    <Content Include="Images\ali18.jpg" />
+    <Content Include="Images\ali19.jpg" />
+    <Content Include="Images\ali2.jpg" />
+    <Content Include="Images\ali20.jpg" />
+    <Content Include="Images\ali21.jpg" />
+    <Content Include="Images\ali22.jpg" />
+    <Content Include="Images\ali23.jpg" />
+    <Content Include="Images\ali24.jpg" />
+    <Content Include="Images\ali25.jpg" />
+    <Content Include="Images\ali26.jpg" />
+    <Content Include="Images\ali28.jpg" />
+    <Content Include="Images\ali29.jpg" />
+    <Content Include="Images\ali3.jpg" />
+    <Content Include="Images\ali30.jpg" />
+    <Content Include="Images\ali31.jpg" />
+    <Content Include="Images\ali32.jpg" />
+    <Content Include="Images\ali33.jpg" />
+    <Content Include="Images\ali34.jpg" />
+    <Content Include="Images\ali35.jpg" />
+    <Content Include="Images\ali37.jpg" />
+    <Content Include="Images\ali38.jpg" />
+    <Content Include="Images\ali39.jpg" />
+    <Content Include="Images\ali4.jpg" />
+    <Content Include="Images\ali40.jpg" />
+    <Content Include="Images\ali41.jpg" />
+    <Content Include="Images\ali42.jpg" />
+    <Content Include="Images\ali43.jpg" />
+    <Content Include="Images\ali44.jpg" />
+    <Content Include="Images\ali45.jpg" />
+    <Content Include="Images\ali46.jpg" />
+    <Content Include="Images\ali47.jpg" />
+    <Content Include="Images\ali48.jpg" />
+    <Content Include="Images\ali49.jpg" />
+    <Content Include="Images\ali5.jpg" />
+    <Content Include="Images\ali50.jpg" />
+    <Content Include="Images\ali51.jpg" />
+    <Content Include="Images\ali52.jpg" />
+    <Content Include="Images\ali53.jpg" />
+    <Content Include="Images\ali54.jpg" />
+    <Content Include="Images\ali55.jpg" />
+    <Content Include="Images\ali56.jpg" />
+    <Content Include="Images\ali57.jpg" />
+    <Content Include="Images\ali58.jpg" />
+    <Content Include="Images\ali59.jpg" />
+    <Content Include="Images\ali6.jpg" />
+    <Content Include="Images\ali60.jpg" />
+    <Content Include="Images\ali61.jpg" />
+    <Content Include="Images\ali62.jpg" />
+    <Content Include="Images\ali63.jpg" />
+    <Content Include="Images\ali7.jpg" />
+    <Content Include="Images\ali77.jpg" />
+    <Content Include="Images\ali8.jpg" />
+    <Content Include="Images\ali9.jpg" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <None Include="Properties\PublishProfiles\aliarchive.org - Web Deploy.pubxml" />
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\app.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\angular-route.min.js.map" />
+    <None Include="Scripts\jquery-2.1.3.intellisense.js" />
+    <Content Include="Scripts\controllers\AmateurFightCtrl.js" />
+    <Content Include="Scripts\controllers\FightCtrl.js" />
+    <Content Include="Scripts\directives\taleofthetape.js" />
+    <Content Include="Scripts\jquery-2.1.3.js" />
+    <Content Include="Scripts\jquery-2.1.3.min.js" />
+    <Content Include="Scripts\jquery-2.1.3.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -205,7 +297,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -226,14 +317,17 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Angular.cshtml" />
+    <Content Include="Views\Shared\_LayoutAngularjs.cshtml" />
+    <Content Include="Views\Home\mvc.cshtml" />
+    <Content Include="Views\Home\ngbootstrap.cshtml" />
+    <Content Include="Views\Home\_taleofthetape.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\services\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>

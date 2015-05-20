@@ -1,0 +1,75 @@
+﻿@model List<AliArchive.Repository.EntityFramework.Fight>
+
+@{
+    ViewBag.Title = "Muhammad Ali Archive";
+}
+
+    <div>
+
+        <h1>
+            <span class="glyphicon glyphicon-bell"></span>
+            This website is making a comeback.
+        </h1>
+
+        <p>Please check back soon.</p>
+
+    </div>
+    
+    <div>
+
+        <table class="table table-striped table-bordered table-hover table-responsive table-condensed" style="border-collapse: separate; border-top-left-radius: 10px;border-top-right-radius: 10px;">
+            <thead>
+                <tr style="background-color:#e5e5e5;">
+                    <td style="border-collapse: separate; border-top-left-radius: 10px;"><strong>Date (dd/mm/yy)</strong></td>
+                    <td><strong>Match</strong></td>
+                    <td><strong>Result</strong></td>
+                    <td><strong>Venue</strong></td>
+                    <td style="border-collapse: separate; border-top-right-radius: 10px;"><strong>Location</strong></td>
+                </tr>
+            </thead>
+
+                @foreach (var m in Model)
+                {
+                    <tr>
+                        <td style="background-color:#a8e1b0"><strong>@m.Date.ToShortDateString()</strong></td>
+                        <td style="background-color:#cbd9fa"><strong>Ali</strong> <small>(@m.AlisWeight lbs)</small> vs <strong>@m.Actor.FirstName @m.Actor.SecondName</strong> <small>(@m.OpponentsWeight lbs)</small></td>
+                        <td style="background-color:#abbde6"><strong>@m.Result</strong> <small> @(m.WonInRound.HasValue ? m.WonInRound + " out of " : "")  @(m.Rounds.HasValue ? m.Rounds + " rds" : "")</small></td>
+                        <td style="background-color:#fbccaa">@m.Venue.VenueName</td>
+                        <td style="background-color:#febc8d">@(m.CityID.HasValue ? m.City.Name + ", " : "") @(m.StateID.HasValue ? m.State.Name + ", " : "") @m.Country.CountryName</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="2" style="background-color:#f2f5f1">
+                            <small> Referee: @(m.RefereeID.HasValue ? m.Actor1.FirstName + " " + m.Actor1.SecondName : "")</small><br />
+                            <small> Judges: </small>
+                        </td>
+
+                        <td colspan="2" style="padding:0">
+                            
+                            <table style="background-color:#e7ebe4;width:100%">
+                                <tr>
+                                    <td style="width:200px;">
+                                        <small> Attendence: @(m.Attendence.HasValue ? m.Attendence.ToString() : "")</small>
+                                        <br />
+                                        <small> Worldwide Audience: @(m.WorlwideAudience.HasValue ? m.WorlwideAudience.ToString() : "")</small>
+                                        <br />
+                                        <small> Live Gate: @(m.LiveGate.HasValue ? "$" + m.LiveGate.ToString() : "")</small>
+                                    </td>
+                                    <td>
+                                        <small> Ali Purse: @(m.AliPurse.HasValue ? "$" + m.AliPurse : "") @(m.AliPercentageOfReceipts.HasValue ? "+" + m.AliPercentageOfReceipts + "%" : "")</small>
+                                        <br />
+                                        <small> Opponent Purse: @(m.OpponentPurse.HasValue ? "$" + m.OpponentPurse : "") @(m.OpponentPercentageOfReceipts.HasValue ? "+" + m.OpponentPercentageOfReceipts + "%" : "")</small>
+
+                                    </td>
+
+
+                                </tr>
+                            </table>
+
+                        
+                        </td>
+                    
+                    </tr>
+                }
+</table>
+</div>

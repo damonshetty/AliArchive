@@ -16,12 +16,16 @@ namespace AliArchive.Repository.EntityFramework
     {
         public State()
         {
+            this.AmateurFights = new HashSet<AmateurFight>();
+            this.ExibitionFights = new HashSet<ExibitionFight>();
             this.Fights = new HashSet<Fight>();
         }
     
         public int StateID { get; set; }
         public string Name { get; set; }
     
+        public virtual ICollection<AmateurFight> AmateurFights { get; set; }
+        public virtual ICollection<ExibitionFight> ExibitionFights { get; set; }
         public virtual ICollection<Fight> Fights { get; set; }
     }
 }

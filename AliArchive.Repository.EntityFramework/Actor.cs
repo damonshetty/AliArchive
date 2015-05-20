@@ -16,6 +16,8 @@ namespace AliArchive.Repository.EntityFramework
     {
         public Actor()
         {
+            this.AmateurFights = new HashSet<AmateurFight>();
+            this.ExibitionFights = new HashSet<ExibitionFight>();
             this.Fights = new HashSet<Fight>();
             this.Fights1 = new HashSet<Fight>();
             this.Fights2 = new HashSet<Fight>();
@@ -25,10 +27,13 @@ namespace AliArchive.Repository.EntityFramework
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string SecondName { get; set; }
+        public string Nickname { get; set; }
         public Nullable<System.DateTime> DOB { get; set; }
         public Nullable<int> TitleID { get; set; }
     
         public virtual Title Title { get; set; }
+        public virtual ICollection<AmateurFight> AmateurFights { get; set; }
+        public virtual ICollection<ExibitionFight> ExibitionFights { get; set; }
         public virtual ICollection<Fight> Fights { get; set; }
         public virtual ICollection<Fight> Fights1 { get; set; }
         public virtual ICollection<Fight> Fights2 { get; set; }

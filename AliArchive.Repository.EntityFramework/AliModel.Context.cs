@@ -26,19 +26,19 @@ namespace AliArchive.Repository.EntityFramework
         }
     
         public virtual DbSet<Actor> Actors { get; set; }
-        public virtual DbSet<Belt> Belts { get; set; }
+        public virtual DbSet<AmateurFight> AmateurFights { get; set; }
         public virtual DbSet<City> Cities { get; set; }
         public virtual DbSet<Country> Countries { get; set; }
         public virtual DbSet<DeerLake> DeerLakes { get; set; }
+        public virtual DbSet<ExibitionFight> ExibitionFights { get; set; }
         public virtual DbSet<Fact> Facts { get; set; }
         public virtual DbSet<Fight> Fights { get; set; }
-        public virtual DbSet<FightReferee> FightReferees { get; set; }
+        public virtual DbSet<Province> Provinces { get; set; }
         public virtual DbSet<Quiz> Quizs { get; set; }
-        public virtual DbSet<Result> Results { get; set; }
-        public virtual DbSet<Round> Rounds { get; set; }
         public virtual DbSet<State> States { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Title> Titles { get; set; }
         public virtual DbSet<Venue> Venues { get; set; }
-        public virtual DbSet<Exibition> Exibitions { get; set; }
+        public virtual DbSet<Belt> Belts { get; set; }
     }
 }

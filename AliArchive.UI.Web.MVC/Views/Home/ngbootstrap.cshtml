@@ -1,0 +1,175 @@
+﻿@{
+    ViewBag.Title = "Ali Archive";
+    Layout = "~/Views/Shared/_LayoutAngularjs.cshtml";
+}
+
+<h2>Ali Archive</h2>
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Ali Archive</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<!--TABS-->
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active"><a href="#Pro" role="tab" data-toggle="tab">Pro</a></li>
+    <li><a href="#Amateur" role="tab" data-toggle="tab">Amateur</a></li>
+    <li><a href="#Exhibition" role="tab" data-toggle="tab">Exhibition</a></li>
+    <li><a href="#Commercial" role="tab" data-toggle="tab">Commercial</a></li>
+</ul>
+
+<!--TAB PAGES-->
+<div class="tab-content">
+
+    <!--Pro Record-->
+    <div class="active tab-pane fade in" id="Pro">
+
+        <div style="background-color:#2ba6cb">
+            <div class="row">
+                <div class="col-md-2"><strong>Date</strong><small>(dd/mm/yy)</small></div>
+                <div class="col-md-3"><strong>Match</strong></div>
+                <div class="col-md-2"><strong>Result</strong></div>
+                <div class="col-md-3"><strong>Venue</strong></div>
+                <div class="col-md-2"><strong>Location</strong></div>
+            </div>
+
+        </div>
+
+        <div class="row" ng-repeat="fight in fights">
+            <div class="col-md-2">
+                <strong>{{fight.Date.Day}}/{{fight.Date.Month}}/{{fight.Date.Year}}</strong>
+
+                @*<img ng-src="~/Images/alipic{{fight.FightID}}.jpg" err-src="http://google.com/favicon.ico" />*@
+
+            </div>
+            <div class="col-md-3">
+                <strong>Ali</strong> <small>({{fight.AlisWeight}} lbs)</small> vs <strong>{{fight.OpponentFirstName + " " + fight.OpponentSecondName}}</strong> <small>({{fight.OpponentsWeight}} lbs)</small>
+
+                <!--Accordion-->
+                <a data-toggle="collapse" data-parent="#collapse" href="#collapse-{{fight.FightID}}">Accordion</a>
+
+                <div id="collapse-{{fight.FightID}}" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="row">
+                            <small> Referee: {{fight.RefereeFirstName}} {{fight.RefereeSecondName}}</small><br />
+                            <small> Judges: </small><br />
+                            <small> Odds: {{fight.Odds}}</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-2">
+                <strong>{{fight.Result}}</strong><br />
+                <small><strong>{{fight.WonInRound}} of {{fight.Rounds}} rds</strong></small><br />
+                <small>{{fight.StoppageTime}}</small>
+            </div>
+
+            <div class="col-md-3">
+                {{fight.Venue}}
+                <div class="row">
+                    <small> Attendence: {{fight.Attendence | number}}</small>
+                    <br />
+                    <small> Worldwide Audience: {{fight.WorldAudience | number}}</small>
+                    <br />
+                    <small> Live Gate: {{fight.LiveGate | currency : $ : 0}}</small>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                {{fight.City}}, {{fight.State}}, {{fight.Country}}
+                <div class="row">
+                    <small> Ali Purse: {{fight.AliPurse | currency : $ : 0}} {{fight.AliPercentage}}</small>
+                    <br />
+                    <small> Opponent Purse: {{fight.OpponentPurse | currency : $ : 0}} {{fight.OpponentPercentage}}</small>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <!--Amateur Record-->
+    <div class="tab-pane fade in" id="Amateur">
+
+        <div class="row">
+            <div class="col-md-2"><strong>Year</strong></div>
+            <div class="col-md-3"><strong>Match</strong></div>
+            <div class="col-md-2"><strong>Result</strong></div>
+            <div class="col-md-3"><strong>Venue</strong></div>
+            <div class="col-md-2"><strong>Location</strong></div>
+        </div>
+
+
+
+
+    </div>
+
+    <!--Exhibition Record-->
+    <div class="tab-pane fade in " id="Exhibition">
+        <div class="row">
+            <div class="col-md-2"><strong>Date</strong><small>(dd/mm/yy)</small></div>
+            <div class="col-md-3"><strong>Match</strong></div>
+            <div class="col-md-2"><strong>Result</strong></div>
+            <div class="col-md-3"><strong>Venue</strong></div>
+            <div class="col-md-2"><strong>Location</strong></div>
+        </div>
+    </div>
+
+    <div class="tab-pane fade in" id="Commercial">Commercial</div>
+
+
+
+</div>

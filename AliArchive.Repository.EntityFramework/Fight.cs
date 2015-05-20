@@ -16,34 +16,48 @@ namespace AliArchive.Repository.EntityFramework
     {
         public Fight()
         {
-            this.Belts = new HashSet<Belt>();
             this.Actors = new HashSet<Actor>();
+            this.Belts = new HashSet<Belt>();
         }
     
         public int FightID { get; set; }
-        public Nullable<int> OpponentID { get; set; }
         public System.DateTime Date { get; set; }
+        public Nullable<int> OpponentID { get; set; }
         public Nullable<int> VenueID { get; set; }
         public Nullable<int> CityID { get; set; }
         public Nullable<int> CountryID { get; set; }
         public Nullable<int> StateID { get; set; }
+        public string Province { get; set; }
         public Nullable<decimal> AlisWeight { get; set; }
         public Nullable<decimal> OpponentsWeight { get; set; }
         public string Result { get; set; }
         public Nullable<int> ResultDescription { get; set; }
         public Nullable<int> Rounds { get; set; }
+        public Nullable<int> WonInRound { get; set; }
+        public Nullable<System.TimeSpan> StoppageTime { get; set; }
         public Nullable<int> BeltID { get; set; }
         public Nullable<int> RefereeID { get; set; }
-        public Nullable<int> JudgeID { get; set; }
+        public string Alias { get; set; }
+        public Nullable<int> Attendence { get; set; }
+        public Nullable<int> WorlwideAudience { get; set; }
+        public Nullable<decimal> LiveGate { get; set; }
+        public string Promoter { get; set; }
+        public Nullable<decimal> AliPurse { get; set; }
+        public Nullable<decimal> AliPercentageOfReceipts { get; set; }
+        public Nullable<decimal> OpponentPurse { get; set; }
+        public Nullable<decimal> OpponentPercentageOfReceipts { get; set; }
+        public Nullable<System.TimeSpan> LocalTime { get; set; }
+        public string BettingOdds { get; set; }
+        public Nullable<int> NumberUSClosedCircuitLocation { get; set; }
+        public Nullable<int> NumberOfBroadcastCountries { get; set; }
     
         public virtual Actor Actor { get; set; }
         public virtual Actor Actor1 { get; set; }
         public virtual City City { get; set; }
         public virtual Country Country { get; set; }
-        public virtual Round Round { get; set; }
         public virtual State State { get; set; }
         public virtual Venue Venue { get; set; }
-        public virtual ICollection<Belt> Belts { get; set; }
         public virtual ICollection<Actor> Actors { get; set; }
+        public virtual ICollection<Belt> Belts { get; set; }
     }
 }
