@@ -1,0 +1,73 @@
+﻿<p>Professional Record</p>
+
+<p>testprodata</p>
+{{testprodata}}
+<p>testprodata</p>
+
+<!--Pro Record-->
+
+    <table class="table table-striped table-bordered table-hover table-responsive table-condensed">
+        <thead>
+            <tr style="background-color:#e5e5e5;">
+                <th width="100px"><strong>Date</strong></th>
+                <th colspan="2"><strong>Match</strong></th>
+                <th><strong>Result</strong></th>
+                <th><strong>Venue</strong></th>
+                <th><strong>Location</strong></th>
+            </tr>
+        </thead>
+
+        <tbody ng-repeat="fight in fights">
+            <tr style="margin:0;padding:0">
+                <td style="background-color:#a8e1b0"><strong>{{fight.Date.Day}}/{{fight.Date.Month}}/{{fight.Date.Year}}</strong></td>
+                <td style="background-color:#cbd9fa"><strong>Ali</strong> <small>({{fight.AlisWeight}} lbs)</small> vs <strong>{{fight.OpponentFirstName + " " + fight.OpponentSecondName}}</strong> <small>({{fight.OpponentsWeight}} lbs)</small></td>
+                <td style="background-color:#cbd9fa">
+                    <button data-toggle="collapse" data-parent="#collapse" href="#collapse-{{fight.FightID}}" class="btn btn-xs btn-warning" title="Click for more information">INFO</button>
+                </td>
+
+                <td style="background-color:#abbde6"><strong>{{fight.Result}}</strong></td>
+                <td style="background-color:#fbccaa"><strong><small>{{fight.Venue}}</small></strong></td>
+                <td style="background-color:#febc8d"><strong>{{fight.City}}, {{fight.State}}, {{fight.Country}}</strong></td>
+            </tr>
+            <tr>
+                <td style="background-color:#d6edd9;padding:0;margin:0">
+                    <img ng-src="/images/ali{{fight.FightID}}.jpg" err-src="http://google.com/favicon.ico" height="100" width="100" />
+                </td>
+
+                <td style="background-color:#f2f5f1" colspan="2">
+                    <p><span class="text-info" ng-show="fight.Alias"><strong>"{{fight.Alias}}"</strong></span> <span class="text-primary" style="text-decoration:underline" ng-repeat="item in fight.Belts"><strong> {{item}} </strong></span></p>
+                    <small> Referee: <strong class="text-success">{{fight.RefereeFirstName}} {{fight.RefereeSecondName}}</strong></small><br />
+                    <small> Judges: <span class="text-danger" ng-repeat="item in fight.JudgeFirst"><strong> {{fight.JudgeFirst[$index]}} {{fight.JudgeSecond[$index]}} | </strong></span></small><br />
+                    <small> Odds: <strong>{{fight.Odds}}</strong></small>
+
+                    <div id="collapse-{{fight.FightID}}" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p class="text-info">Tale of The Tape - Coming soon...</p>
+                        </div>
+                    </div>
+
+                </td>
+                <td style="background-color:#f2f5f1">
+                    <small>{{fight.StoppageTime}}</small>
+                    <small><strong>{{fight.WonInRound}} of {{fight.Rounds}} rds</strong></small>
+                </td>
+                <td style="background-color:#e7ebe4">
+                    <small> Attendence: <strong>{{fight.Attendence | number}}</strong></small>
+                    <br />
+                    <small> Live Gate: <strong>{{fight.LiveGate | currency : $ : 0}}</strong></small>
+                    <br />
+                    <small ng-show="fight.WorldAudience"> Worldwide Audience: <strong>{{fight.WorldAudience | number}}</strong></small>
+                </td>
+                <td style="background-color:#e7ebe4">
+                    <small> Ali Purse: <strong>{{fight.AliPurse | currency : $ : 0}} {{fight.AliPercentage}}</strong></small>
+                    <br />
+                    <small> Opponent Purse: <strong>{{fight.OpponentPurse | currency : $ : 0}} {{fight.OpponentPercentage}}</strong></small><br />
+
+                    <small ng-show="fight.NumberBroadcastCountries">Broadcast Countries: <strong>{{fight.NumberBroadcastCountries}}</strong></small><br />
+                    <small ng-show="fight.NumberClosedCircuitUS">US Closed Circuit Locations: <strong>{{fight.NumberClosedCircuitUS}}</strong></small>
+
+                </td>
+            </tr>
+        </tbody>
+
+    </table>

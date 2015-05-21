@@ -1,12 +1,19 @@
 ﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
 
+<html ng-app="aliApp">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Muhammad Ali Archive</title>
+    <meta name="description" content="The Best Muhammad Ali Boxing Fight Record. Boxing results, fights, professional, amateur, exhibitions, commerical, other" />
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angularjs")
+    <script src="~/Scripts/app/app.js"></script>
+
+    <script src="~/Scripts/controllers/proCtrl.js"></script>
+    <script src="~/Scripts/controllers/amateurCtrl.js"></script>
+        
+    @Styles.Render("~/Content/css")
+    <base href="/">
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -17,32 +24,43 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @*@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+
+                <a href="/Home"class="navbar-brand">Home</a>
+                <a href="/About" class="navbar-brand">About</a>
+
             </div>
             <div class="navbar-collapse collapse">
-
-                @*<ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    </ul>
-                    @Html.Partial("_LoginPartial")*@
-
+                <ul class="nav navbar-nav">
+                    <li><a href="/ProRecord">Pro Record</a></li>
+                    <li><a href="/AmateurRecord">Amateur Record</a></li>
+                    @*<li><a href="#/ExhibitionRecord">Exhibition Record</a></li>*@
+                </ul>
+                @*@Html.Partial("_LoginPartial")*@
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            @*<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>*@
-        </footer>
-    </div>
+    <div class="container">
+        <h1>Ali Archive AngularJS Version</h1>
+        <h2>
+            This website is making a comeback.
+        </h2>
+        <p>Please check back soon.</p>
+        <p>RECORD: 61 Fights / 56 Wins (37 by KO) / 5 Losses</p>
 
+        <!--Routing-->
+        <div ng-view></div>
+
+        @RenderBody()
+
+        <hr />
+        <footer><p>&copy; @DateTime.Now.Year</p></footer>
+    </div>
+    
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
 </body>
 </html>
 @{

@@ -1,14 +1,17 @@
 ﻿<!DOCTYPE html>
 
-<html>
+<html ng-app="aliApp">
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <meta name="description" content="The Best Muhammad Ali Boxing Record. Boxing results, professional, amateur, exhibitions, Other" />
+    <meta name="description" content="The Best Muhammad Ali Boxing Fight Record. Boxing results, fights, professional, amateur, exhibitions, commerical, other" />
+    @Scripts.Render("~/bundles/angularjs")
+    <script src="~/Scripts/app/app.js"></script>
+    <script src="~/Scripts/controllers/proCtrl.js"></script>
+    @Scripts.Render("~/bundles/bootstrap")
     @Styles.Render("~/Content/css")
-    
 </head>
-<body ng-app="fightApp">
+<body ng-controller="proCtrl">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -19,34 +22,42 @@
                 </button>
                 @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 @Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                                
             </div>
             <div class="navbar-collapse collapse">
-                @*<ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    </ul>
-                    @Html.Partial("_LoginPartial")*@
+                <ul class="nav navbar-nav">
+                    <li><a href="#/Test">Test ng</a></li>
+                    <li><a href="#/ProRecord">Pro Record ng</a></li>
+                    <li><a href="#/Home/AmateurRecord">Amateur Record ng</a></li>
+                    <li><a href="#/Home/ExhibitionRecord">Exhibition Record ng</a></li>
+                </ul>
+                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
     <div class="container">
+        <h1>Ali Archive AngularJS Version</h1>
+        <h2>
+            This website is making a comeback.
+        </h2>
+        <p>Please check back soon.</p>
+        <p>RECORD: 61 Fights / 56 Wins (37 by KO) / 5 Losses</p>
+
+        <!--Routing-->
+        <div ng-view></div>
+        
         @RenderBody()
+        
+        <hr />
+        <footer><p>&copy; @DateTime.Now.Year</p></footer>
     </div>
 
-    @Scripts.Render("~/bundles/angularjs")
+
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    <script type="text/javascript">
-        window.MyApp = {};
-    </script>
-    <script src="~/App/Validator.js"></script>
-    <script src="~/App/App.js"></script>
+
+
     @RenderSection("scripts", required: false)
-    <script type="text/javascript">
-        MyApp.rootPath = '@Url.Content("~")';
-        @RenderSection("jsCode", required: false)
-    </script>
+
 </body>
 </html>
 @{

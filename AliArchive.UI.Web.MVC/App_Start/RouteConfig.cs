@@ -13,6 +13,15 @@ namespace AliArchive.UI.Web.MVC
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
+            ////Add custom routes
+            //routes.MapRoute(
+            //    name: "prorecord",
+            //    url: "prorecord/{*catchall}",
+            //    defaults: new { controller = "Home", action = "ProRecord" });
+
+
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

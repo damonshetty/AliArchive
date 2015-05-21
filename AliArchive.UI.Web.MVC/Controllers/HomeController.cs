@@ -26,6 +26,30 @@ namespace AliArchive.UI.Web.MVC.Controllers
         }
 
         [HttpGet]
+        public ActionResult ProRecord()
+        {
+            ViewBag.Message = "Professional Record";
+
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult AmateurRecord()
+        {
+            ViewBag.Message = "Amateur Record";
+
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult ExhibitionRecord()
+        {
+            ViewBag.Message = "Exhibition Record";
+
+            return View();
+        }
+
+        [HttpGet]
         public JsonResult JsonFights()
         {
             AliDBContext db = new AliDBContext();
