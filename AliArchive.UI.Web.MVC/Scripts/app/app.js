@@ -1,6 +1,6 @@
 ﻿window.app = angular.module('aliApp', ['ngRoute'])
     .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-        
+
         $routeProvider
             .when('/', {
                 templateUrl: '/Partials/ProRecord.html',
@@ -11,8 +11,7 @@
                 controller: 'proCtrl'
             })
             .when('/About', {
-                templateUrl: '/Partials/About.html',
-                controller: 'proCtrl'
+                templateUrl: '/Partials/About.html'
             })
             .when('/ProRecord', {
                 templateUrl: '/Partials/ProRecord.html',
@@ -24,11 +23,20 @@
             })
             .when('/ExhibitionRecord', {
                 templateUrl: '/Partials/ExhibitionRecord.html',
-                controller: 'proCtrl'
+                controller: 'exhibitionCtrl'
+            })
+            .when('/Commericals', {
+                templateUrl: '/Partials/Commercials.html',
+                controller: 'commericialsCtrl'
             })
 
         .otherwise({ redirectTo: '/' });
 
         $locationProvider.html5Mode(true);
 
-    }]);
+    }])
+
+
+
+
+;

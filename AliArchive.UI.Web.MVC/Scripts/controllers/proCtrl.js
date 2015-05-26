@@ -1,9 +1,10 @@
-﻿window.app.controller('proCtrl', function ($scope, $http) {
-
-    $http.get('/Home/jsonfights').success(function (data) {
-
-        $scope.fights = data;
-
-    });
+﻿window.app.controller('proCtrl', function ($scope, $http, jsonProFightsFactory) {
     
+    jsonProFightsFactory.getFights().then(function (response) {
+        $scope.fights = response.data;
+    });
+
+
+    
+
 });

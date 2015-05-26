@@ -17,7 +17,7 @@
                 <td style="background-color:#a8e1b0"><strong>{{fight.Date.Day}}/{{fight.Date.Month}}/{{fight.Date.Year}}</strong></td>
                 <td style="background-color:#cbd9fa"><strong>Ali</strong> <small>({{fight.AlisWeight}} lbs)</small> vs <strong>{{fight.OpponentFirstName + " " + fight.OpponentSecondName}}</strong> <small>({{fight.OpponentsWeight}} lbs)</small></td>
                 <td style="background-color:#cbd9fa">
-                    <button data-toggle="collapse" data-parent="#collapse" href="#collapse-{{fight.FightID}}" class="btn btn-xs btn-warning" title="Click for more information">INFO</button>
+                    <button class="btn btn-xs btn-warning" title="Click for more information">INFO</button>
                 </td>
 
                 <td style="background-color:#abbde6"><strong>{{fight.Result}}</strong></td>
@@ -32,7 +32,7 @@
                 <td style="background-color:#f2f5f1" colspan="2">
                     <p><span class="text-info" ng-show="fight.Alias"><strong>"{{fight.Alias}}"</strong></span> <span class="text-primary" style="text-decoration:underline" ng-repeat="item in fight.Belts"><strong> {{item}} </strong></span></p>
                     <small> Referee: <strong class="text-success">{{fight.RefereeFirstName}} {{fight.RefereeSecondName}}</strong></small><br />
-                    <small> Judges: <span class="text-danger" ng-repeat="item in fight.JudgeFirst"><strong> {{fight.JudgeFirst[$index]}} {{fight.JudgeSecond[$index]}} | </strong></span></small><br />
+                    <small> Judges: <span class="text-danger" ng-repeat="item in fight.JudgeFirst track by $index"><strong> {{fight.JudgeFirst[$index]}} {{fight.JudgeSecond[$index]}} | </strong></span></small><br />
                     <small> Odds: <strong>{{fight.Odds}}</strong></small>
 
                     <div id="collapse-{{fight.FightID}}" class="panel-collapse collapse">
