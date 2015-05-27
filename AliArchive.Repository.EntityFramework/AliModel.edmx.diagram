@@ -12,7 +12,6 @@
         <EntityTypeShape EntityType="AliData2012Model.DeerLake" PointX="5.75" PointY="0.75" Width="1.5" />
         <EntityTypeShape EntityType="AliData2012Model.ExibitionFight" PointX="7.5" PointY="3.75" Width="1.5" />
         <EntityTypeShape EntityType="AliData2012Model.Fact" PointX="7.75" PointY="0.75" Width="1.5" />
-        <EntityTypeShape EntityType="AliData2012Model.Fight" PointX="3" PointY="1.5" Width="1.5" />
         <EntityTypeShape EntityType="AliData2012Model.Province" PointX="5.75" PointY="8.75" Width="1.5" />
         <EntityTypeShape EntityType="AliData2012Model.Quiz" PointX="7.75" PointY="8.75" Width="1.5" />
         <EntityTypeShape EntityType="AliData2012Model.State" PointX="0.75" PointY="13.5" Width="1.5" />
@@ -22,24 +21,26 @@
         <AssociationConnector Association="AliData2012Model.FK_Actors_Title" />
         <AssociationConnector Association="AliData2012Model.FK_AmateurFights_Actor" />
         <AssociationConnector Association="AliData2012Model.FK_ExibitionFights_Actor" />
-        <AssociationConnector Association="AliData2012Model.FK_FightOpponent_Actor" />
-        <AssociationConnector Association="AliData2012Model.FK_FightReferee_Actor" />
         <AssociationConnector Association="AliData2012Model.FK_AmateurFights_City" />
         <AssociationConnector Association="AliData2012Model.FK_AmateurFights_Country" />
         <AssociationConnector Association="AliData2012Model.FK_AmateurFights_State" />
         <AssociationConnector Association="AliData2012Model.FK_AmateurFights_Venue" />
         <AssociationConnector Association="AliData2012Model.FK_ExibitionFights_City" />
-        <AssociationConnector Association="AliData2012Model.FK_Fight_City" />
         <AssociationConnector Association="AliData2012Model.FK_ExibitionFights_Country" />
-        <AssociationConnector Association="AliData2012Model.FK_Fight_Country1" />
         <AssociationConnector Association="AliData2012Model.FK_ExibitionFights_State" />
         <AssociationConnector Association="AliData2012Model.FK_ExibitionFights_Venue" />
+        <EntityTypeShape EntityType="AliData2012Model.Belt" PointX="0.75" PointY="8.125" Width="1.5" />
+        <EntityTypeShape EntityType="AliData2012Model.Fight" Width="1.5" PointX="10.5" PointY="8.5" />
+        <AssociationConnector Association="AliData2012Model.FK_Fight_Actor" />
+        <AssociationConnector Association="AliData2012Model.FK_FightOpponent_Actor" />
+        <AssociationConnector Association="AliData2012Model.FK_FightReferee_Actor" />
+        <AssociationConnector Association="AliData2012Model.FK_Fight_City" />
+        <AssociationConnector Association="AliData2012Model.FK_Fight_Country1" />
         <AssociationConnector Association="AliData2012Model.FK_Fight_State" />
         <AssociationConnector Association="AliData2012Model.FK_Fight_Venue" />
-        <AssociationConnector Association="AliData2012Model.MatchJudge1" />
-        <EntityTypeShape EntityType="AliData2012Model.Belt" PointX="0.75" PointY="8.125" Width="1.5" />
         <AssociationConnector Association="AliData2012Model.FightBelt" />
-      </Diagram>
+        <AssociationConnector Association="AliData2012Model.MatchJudge" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

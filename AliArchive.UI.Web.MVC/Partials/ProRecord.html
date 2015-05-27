@@ -1,4 +1,5 @@
-﻿<p><strong>Professional Record</strong></p>
+﻿<p class="text-warning"><strong>To filter, click on Opponent's name, Referree, Judge, Venue, City, State or Country. Then click RESET button, top right of table.</strong></p>
+<p><strong>Professional Record</strong></p>
 
 <!--Pro Record-->
     <table class="table table-striped table-bordered table-hover table-responsive table-condensed">
@@ -8,21 +9,20 @@
                 <th colspan="2"><strong>Match</strong></th>
                 <th><strong>Result</strong></th>
                 <th><strong>Venue</strong></th>
-                <th><strong>Location</strong></th>
+                <th><strong>Location</strong><span style="float:right"><button class="btn btn-xs btn-warning" title="Reset" ng-click="resetClick()">RESET</button></span></th>
             </tr>
         </thead>
 
-        <tbody ng-repeat="fight in fights">
+        <tbody ng-repeat="fight in fights" ng-show="fight.Show">
             <tr style="margin:0;padding:0">
                 <td style="background-color:#a8e1b0"><strong>{{fight.Date.Day}}/{{fight.Date.Month}}/{{fight.Date.Year}}</strong></td>
-                <td style="background-color:#cbd9fa"><strong>Ali</strong> <small>({{fight.AlisWeight}} lbs)</small> vs <strong>{{fight.OpponentFirstName + " " + fight.OpponentSecondName}}</strong> <small>({{fight.OpponentsWeight}} lbs)</small></td>
+                <td style="background-color:#cbd9fa"><strong>Ali</strong> <small>({{fight.AlisWeight}} lbs)</small> vs <strong style="cursor:pointer;" ng-click="fighterFilterClick(fight.OpponentSecondName)">{{fight.OpponentFirstName + " " + fight.OpponentSecondName}}</strong> <small>({{fight.OpponentsWeight}} lbs)</small></td>
                 <td style="background-color:#cbd9fa">
-                    <button class="btn btn-xs btn-warning" title="Click for more information">INFO</button>
+                    <button class="btn btn-xs btn-warning" title="Click for more information" ng-click="infoClick($index)">INFO</button>
                 </td>
-
                 <td style="background-color:#abbde6"><strong>{{fight.Result}}</strong></td>
-                <td style="background-color:#fbccaa"><strong><small>{{fight.Venue}}</small></strong></td>
-                <td style="background-color:#febc8d"><strong>{{fight.City}}<span ng-show="fight.State">, {{fight.State}}</span>, {{fight.Country}}</strong></td>
+                <td style="background-color:#fbccaa"><strong style="cursor:pointer" ng-click="VenueFilterClick(fight.Venue)"><small>{{fight.Venue}}</small></strong></td>
+                <td style="background-color:#febc8d"><strong style="cursor:pointer" ng-click="CityFilterClick(fight.City)">{{fight.City}}</strong><strong style="cursor:pointer" ng-click="StateFilterClick(fight.State)"><span ng-show="fight.State">, {{fight.State}}</span></strong><strong style="cursor:pointer" ng-click="CountryFilterClick(fight.Country)">, {{fight.Country}}</strong></td>
             </tr>
             <tr>
                 <td style="background-color:#d6edd9;padding:0;margin:0">
@@ -31,42 +31,29 @@
 
                 <td style="background-color:#f2f5f1" colspan="2">
                     <p><span class="text-info" ng-show="fight.Alias"><strong>"{{fight.Alias}}"</strong></span> <span class="text-primary" style="text-decoration:underline" ng-repeat="item in fight.Belts"><strong> {{item}} </strong></span></p>
-                    <small> Referee: <strong class="text-success">{{fight.RefereeFirstName}} {{fight.RefereeSecondName}}</strong></small><br />
-                    <small> Judges: <span class="text-danger" ng-repeat="item in fight.JudgeFirst track by $index"><strong> {{fight.JudgeFirst[$index]}} {{fight.JudgeSecond[$index]}} | </strong></span></small><br />
-                    <small> Odds: <strong>{{fight.Odds}}</strong></small>
+                    <small ng-show="fight.RefereeFirstName"> Referee: <strong class="text-success" style="cursor:pointer" ng-click="refereeFilterClick(fight.RefereeSecondName)">{{fight.RefereeFirstName}} {{fight.RefereeSecondName}}</strong><br /></small>
+                    <small ng-show="fight.JudgeFirst.length"> Judges: <span class="text-danger" ng-repeat="item in fight.JudgeFirst track by $index"><strong style="cursor:pointer" ng-click="JudgeFilterClick(fight.JudgeSecond[$index], $index)"> {{fight.JudgeFirst[$index]}} {{fight.JudgeSecond[$index]}} | </strong></span><br /></small>
+                    <small ng-show="fight.Odds"> Odds: <strong>{{fight.Odds}}</strong></small> <small ng-show="fight.PromoterFirst"> Promoter: <strong>{{fight.PromoterFirst}} {{fight.PromoterSecond}}</strong></small>
 
-                    <div id="collapse-{{fight.FightID}}" class="panel-collapse collapse">
-
-                        <div class="panel-body">
-
-                            <p class="text-info">Tale of The Tape - Coming soon...</p>
-
-                        </div>
-
+                    <div ng-show="fight.WorldAudience">
+                        <!--<taleof-thetape></taleof-thetape>-->
                     </div>
-
                 </td>
                 <td style="background-color:#f2f5f1">
+                    <small><strong>{{fight.WonInRound}} of {{fight.Rounds}} rds</strong></small><br />
                     <small>{{fight.StoppageTime}}</small>
-                    <small><strong>{{fight.WonInRound}} of {{fight.Rounds}} rds</strong></small>
                 </td>
                 <td style="background-color:#e7ebe4">
-                    <small> Attendence: <strong>{{fight.Attendence | number}}</strong></small>
-                    <br />
-                    <small> Live Gate: <strong>{{fight.LiveGate | currency : $ : 0}}</strong></small>
-                    <br />
+                    <small ng-show="fight.Attendence"> Attendence: <strong>{{fight.Attendence | number}}</strong><br /></small>
+                    <small ng-show="fight.LiveGate"> Live Gate: <strong>{{fight.LiveGate | currency : $ : 0}}</strong><br /></small>
                     <small ng-show="fight.WorldAudience"> Worldwide Audience: <strong>{{fight.WorldAudience | number}}</strong></small>
                 </td>
                 <td style="background-color:#e7ebe4">
-                    <small> Ali Purse: <strong>{{fight.AliPurse | currency : $ : 0}} {{fight.AliPercentage}}</strong></small>
-                    <br />
+                    <small> Ali Purse: <strong>{{fight.AliPurse | currency : $ : 0}} {{fight.AliPercentage}}</strong></small><br />
                     <small> Opponent Purse: <strong>{{fight.OpponentPurse | currency : $ : 0}} {{fight.OpponentPercentage}}</strong></small><br />
-
-                    <small ng-show="fight.NumberBroadcastCountries">Broadcast Countries: <strong>{{fight.NumberBroadcastCountries}}</strong></small><br />
-                    <small ng-show="fight.NumberClosedCircuitUS">US Closed Circuit Locations: <strong>{{fight.NumberClosedCircuitUS}}</strong></small>
-
+                    <small ng-show="fight.NumberClosedCircuitUS">US Closed Circuit Locations: <strong>{{fight.NumberClosedCircuitUS}}</strong><br /></small>
+                    <small ng-show="fight.NumberBroadcastCountries">Broadcast Countries: <strong>{{fight.NumberBroadcastCountries}}</strong></small>
                 </td>
             </tr>
         </tbody>
-
     </table>

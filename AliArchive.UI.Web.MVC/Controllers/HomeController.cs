@@ -67,19 +67,21 @@ namespace AliArchive.UI.Web.MVC.Controllers
                                   Date = new { c.Date.Year, c.Date.Month, c.Date.Day },
                                   AlisWeight = c.AlisWeight,
                                   OpponentsWeight = c.OpponentsWeight,
-                                  OpponentFirstName = c.Actor.FirstName,
+                                  OpponentFirstName = c.Actor1.FirstName,
                                   Alias = c.Alias,
                                   Odds = c.BettingOdds,
-                                  OpponentSecondName = c.Actor.SecondName,
+                                  OpponentSecondName = c.Actor1.SecondName,
                                   WonInRound = c.WonInRound,
                                   StoppageTime = c.StoppageTime.ToString(),
                                   Rounds = c.Rounds,
                                   Result = c.Result,
-                                  RefereeFirstName = c.Actor1.FirstName,
-                                  RefereeSecondName = c.Actor1.SecondName,
+                                  RefereeFirstName = c.Actor2.FirstName,
+                                  RefereeSecondName = c.Actor2.SecondName,
                                   JudgeFirst = c.Actors.Select(m => m.FirstName),
                                   JudgeSecond = c.Actors.Select(s=>s.SecondName),
                                   Belts = c.Belts.Select(m=>m.BeltAbbreviation),
+                                  PromoterFirst = c.Actor.FirstName,
+                                  PromoterSecond = c.Actor.SecondName,
                                   Venue = c.Venue.VenueName,
                                   City = c.City.Name,
                                   State = c.State.Name,
@@ -92,7 +94,8 @@ namespace AliArchive.UI.Web.MVC.Controllers
                                   AliPurse = c.AliPurse,
                                   AliPercentage = c.AliPercentageOfReceipts.HasValue ? "+" + c.AliPercentageOfReceipts + "%" : null,
                                   OpponentPurse = c.OpponentPurse,
-                                  OpponentPercentage = c.OpponentPercentageOfReceipts.HasValue ? "+" + c.OpponentPercentageOfReceipts + "%" : null
+                                  OpponentPercentage = c.OpponentPercentageOfReceipts.HasValue ? "+" + c.OpponentPercentageOfReceipts + "%" : null,
+                                  Show = true
                               };
             
             return Json(

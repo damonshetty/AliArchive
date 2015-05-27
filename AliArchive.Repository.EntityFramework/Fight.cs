@@ -16,13 +16,14 @@ namespace AliArchive.Repository.EntityFramework
     {
         public Fight()
         {
-            this.Actors = new HashSet<Actor>();
             this.Belts = new HashSet<Belt>();
+            this.Actors = new HashSet<Actor>();
         }
     
         public int FightID { get; set; }
         public System.DateTime Date { get; set; }
         public Nullable<int> OpponentID { get; set; }
+        public string OpponentNickname { get; set; }
         public Nullable<int> VenueID { get; set; }
         public Nullable<int> CityID { get; set; }
         public Nullable<int> CountryID { get; set; }
@@ -41,7 +42,7 @@ namespace AliArchive.Repository.EntityFramework
         public Nullable<int> Attendence { get; set; }
         public Nullable<int> WorlwideAudience { get; set; }
         public Nullable<decimal> LiveGate { get; set; }
-        public string Promoter { get; set; }
+        public Nullable<int> Promoter { get; set; }
         public Nullable<decimal> AliPurse { get; set; }
         public Nullable<decimal> AliPercentageOfReceipts { get; set; }
         public Nullable<decimal> OpponentPurse { get; set; }
@@ -50,14 +51,16 @@ namespace AliArchive.Repository.EntityFramework
         public string BettingOdds { get; set; }
         public Nullable<int> NumberUSClosedCircuitLocation { get; set; }
         public Nullable<int> NumberOfBroadcastCountries { get; set; }
+        public string Notes { get; set; }
     
         public virtual Actor Actor { get; set; }
         public virtual Actor Actor1 { get; set; }
+        public virtual Actor Actor2 { get; set; }
         public virtual City City { get; set; }
         public virtual Country Country { get; set; }
         public virtual State State { get; set; }
         public virtual Venue Venue { get; set; }
-        public virtual ICollection<Actor> Actors { get; set; }
         public virtual ICollection<Belt> Belts { get; set; }
+        public virtual ICollection<Actor> Actors { get; set; }
     }
 }

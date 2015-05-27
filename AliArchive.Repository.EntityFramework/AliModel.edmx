@@ -9,11 +9,11 @@
           <Key>
             <PropertyRef Name="ActorID" />
           </Key>
-          <Property Name="ActorID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-          <Property Name="FirstName" Nullable="false" MaxLength="50" Type="nvarchar" />
-          <Property Name="MiddleName" MaxLength="50" Type="nvarchar" />
-          <Property Name="SecondName" Nullable="false" MaxLength="50" Type="nvarchar" />
-          <Property Name="Nickname" MaxLength="50" Type="nvarchar" />
+          <Property Name="ActorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="SecondName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nickname" Type="nvarchar" MaxLength="50" />
           <Property Name="DOB" Type="smalldatetime" />
           <Property Name="TitleID" Type="int" />
         </EntityType>
@@ -21,7 +21,7 @@
           <Key>
             <PropertyRef Name="AmateurFightID" />
           </Key>
-          <Property Name="AmateurFightID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="AmateurFightID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Date" Type="smalldatetime" />
           <Property Name="Year" Type="int" />
           <Property Name="OpponentID" Type="int" />
@@ -31,42 +31,42 @@
           <Property Name="CountryID" Type="int" />
           <Property Name="Rounds" Type="int" />
           <Property Name="WonInRound" Type="int" />
-          <Property Name="Result" MaxLength="50" Type="nvarchar" />
-          <Property Name="StoppageTime" Precision="0" Type="time" />
+          <Property Name="Result" Type="nvarchar" MaxLength="50" />
+          <Property Name="StoppageTime" Type="time" Precision="0" />
         </EntityType>
         <EntityType Name="Belt">
           <Key>
             <PropertyRef Name="BeltID" />
           </Key>
-          <Property Name="BeltID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-          <Property Name="BeltName" MaxLength="50" Type="varchar" />
-          <Property Name="BeltAbbreviation" MaxLength="50" Type="varchar" />
+          <Property Name="BeltID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BeltName" Type="varchar" MaxLength="50" />
+          <Property Name="BeltAbbreviation" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="City">
           <Key>
             <PropertyRef Name="CityID" />
           </Key>
-          <Property Name="CityID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-          <Property Name="Name" MaxLength="50" Type="varchar" />
+          <Property Name="CityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Country">
           <Key>
             <PropertyRef Name="CountryID" />
           </Key>
-          <Property Name="CountryID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-          <Property Name="CountryName" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="CountryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CountryName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="DeerLake">
           <Key>
             <PropertyRef Name="DeerLakeID" />
           </Key>
-          <Property Name="DeerLakeID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="DeerLakeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="ExibitionFights">
           <Key>
             <PropertyRef Name="ExibitionFightID" />
           </Key>
-          <Property Name="ExibitionFightID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="ExibitionFightID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Date" Type="smalldatetime" />
           <Property Name="Year" Type="int" />
           <Property Name="OpponentID" Type="int" />
@@ -80,87 +80,89 @@
           <Key>
             <PropertyRef Name="FactID" />
           </Key>
-          <Property Name="FactID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="FactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Description" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="Fight">
           <Key>
             <PropertyRef Name="FightID" />
           </Key>
-          <Property Name="FightID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-          <Property Name="Date" Nullable="false" Type="smalldatetime" />
+          <Property Name="FightID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="smalldatetime" Nullable="false" />
           <Property Name="OpponentID" Type="int" />
+          <Property Name="OpponentNickname" Type="nvarchar" MaxLength="50" />
           <Property Name="VenueID" Type="int" />
           <Property Name="CityID" Type="int" />
           <Property Name="CountryID" Type="int" />
           <Property Name="StateID" Type="int" />
-          <Property Name="Province" MaxLength="50" Type="nvarchar" />
-          <Property Name="AlisWeight" Precision="5" Scale="2" Type="decimal" />
-          <Property Name="OpponentsWeight" Precision="5" Scale="2" Type="decimal" />
-          <Property Name="Result" MaxLength="50" Type="nvarchar" />
+          <Property Name="Province" Type="nvarchar" MaxLength="50" />
+          <Property Name="AlisWeight" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="OpponentsWeight" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="Result" Type="nvarchar" MaxLength="50" />
           <Property Name="ResultDescription" Type="int" />
           <Property Name="Rounds" Type="int" />
           <Property Name="WonInRound" Type="int" />
-          <Property Name="StoppageTime" Precision="0" Type="time" />
+          <Property Name="StoppageTime" Type="time" Precision="0" />
           <Property Name="BeltID" Type="int" />
           <Property Name="RefereeID" Type="int" />
-          <Property Name="Alias" MaxLength="100" Type="nvarchar" />
+          <Property Name="Alias" Type="nvarchar" MaxLength="100" />
           <Property Name="Attendence" Type="int" />
           <Property Name="WorlwideAudience" Type="int" />
-          <Property Name="LiveGate" Precision="18" Scale="0" Type="decimal" />
-          <Property Name="Promoter" MaxLength="50" Type="nvarchar" />
-          <Property Name="AliPurse" Precision="18" Scale="0" Type="decimal" />
-          <Property Name="AliPercentageOfReceipts" Precision="3" Scale="1" Type="decimal" />
-          <Property Name="OpponentPurse" Precision="18" Scale="0" Type="decimal" />
-          <Property Name="OpponentPercentageOfReceipts" Precision="3" Scale="1" Type="decimal" />
-          <Property Name="LocalTime" Precision="7" Type="time" />
-          <Property Name="BettingOdds" MaxLength="50" Type="nvarchar" />
+          <Property Name="LiveGate" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Promoter" Type="int" />
+          <Property Name="AliPurse" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="AliPercentageOfReceipts" Type="decimal" Precision="3" Scale="1" />
+          <Property Name="OpponentPurse" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="OpponentPercentageOfReceipts" Type="decimal" Precision="3" Scale="1" />
+          <Property Name="LocalTime" Type="time" Precision="7" />
+          <Property Name="BettingOdds" Type="nvarchar" MaxLength="50" />
           <Property Name="NumberUSClosedCircuitLocation" Type="int" />
           <Property Name="NumberOfBroadcastCountries" Type="int" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="FightBelt">
           <Key>
             <PropertyRef Name="FightID" />
             <PropertyRef Name="BeltID" />
           </Key>
-          <Property Name="FightID" Nullable="false" Type="int" />
-          <Property Name="BeltID" Nullable="false" Type="int" />
+          <Property Name="FightID" Type="int" Nullable="false" />
+          <Property Name="BeltID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="MatchJudge">
           <Key>
             <PropertyRef Name="FightID" />
             <PropertyRef Name="ActorID" />
           </Key>
-          <Property Name="FightID" Nullable="false" Type="int" />
-          <Property Name="ActorID" Nullable="false" Type="int" />
+          <Property Name="FightID" Type="int" Nullable="false" />
+          <Property Name="ActorID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Province">
           <Key>
             <PropertyRef Name="ProvinceID" />
           </Key>
-          <Property Name="ProvinceID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-          <Property Name="Name" MaxLength="50" Type="nvarchar" />
+          <Property Name="ProvinceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Quiz">
           <Key>
             <PropertyRef Name="QuizID" />
           </Key>
-          <Property Name="QuizID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="QuizID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="State">
           <Key>
             <PropertyRef Name="StateID" />
           </Key>
-          <Property Name="StateID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-          <Property Name="Name" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="StateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="name" Nullable="false" MaxLength="128" Type="nvarchar" />
-          <Property Name="principal_id" Nullable="false" Type="int" />
-          <Property Name="diagram_id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
@@ -168,19 +170,19 @@
           <Key>
             <PropertyRef Name="TitleID" />
           </Key>
-          <Property Name="TitleID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-          <Property Name="Title" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="TitleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Venue">
           <Key>
             <PropertyRef Name="VenueID" />
           </Key>
-          <Property Name="VenueID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-          <Property Name="VenueName" MaxLength="50" Type="varchar" />
+          <Property Name="VenueID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VenueName" Type="varchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK_Actors_Title">
-          <End Type="Self.Title" Multiplicity="0..1" Role="Title" />
-          <End Type="Self.Actor" Multiplicity="*" Role="Actor" />
+          <End Role="Title" Type="Self.Title" Multiplicity="0..1" />
+          <End Role="Actor" Type="Self.Actor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Title">
               <PropertyRef Name="TitleID" />
@@ -191,8 +193,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_AmateurFights_Actor">
-          <End Type="Self.Actor" Multiplicity="0..1" Role="Actor" />
-          <End Type="Self.AmateurFights" Multiplicity="*" Role="AmateurFights" />
+          <End Role="Actor" Type="Self.Actor" Multiplicity="0..1" />
+          <End Role="AmateurFights" Type="Self.AmateurFights" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Actor">
               <PropertyRef Name="ActorID" />
@@ -203,8 +205,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_AmateurFights_City">
-          <End Type="Self.City" Multiplicity="0..1" Role="City" />
-          <End Type="Self.AmateurFights" Multiplicity="*" Role="AmateurFights" />
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="AmateurFights" Type="Self.AmateurFights" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="City">
               <PropertyRef Name="CityID" />
@@ -215,8 +217,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_AmateurFights_Country">
-          <End Type="Self.Country" Multiplicity="0..1" Role="Country" />
-          <End Type="Self.AmateurFights" Multiplicity="*" Role="AmateurFights" />
+          <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+          <End Role="AmateurFights" Type="Self.AmateurFights" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Country">
               <PropertyRef Name="CountryID" />
@@ -227,8 +229,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_AmateurFights_State">
-          <End Type="Self.State" Multiplicity="0..1" Role="State" />
-          <End Type="Self.AmateurFights" Multiplicity="*" Role="AmateurFights" />
+          <End Role="State" Type="Self.State" Multiplicity="0..1" />
+          <End Role="AmateurFights" Type="Self.AmateurFights" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="State">
               <PropertyRef Name="StateID" />
@@ -239,8 +241,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_AmateurFights_Venue">
-          <End Type="Self.Venue" Multiplicity="0..1" Role="Venue" />
-          <End Type="Self.AmateurFights" Multiplicity="*" Role="AmateurFights" />
+          <End Role="Venue" Type="Self.Venue" Multiplicity="0..1" />
+          <End Role="AmateurFights" Type="Self.AmateurFights" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Venue">
               <PropertyRef Name="VenueID" />
@@ -251,8 +253,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ExibitionFights_Actor">
-          <End Type="Self.Actor" Multiplicity="0..1" Role="Actor" />
-          <End Type="Self.ExibitionFights" Multiplicity="*" Role="ExibitionFights" />
+          <End Role="Actor" Type="Self.Actor" Multiplicity="0..1" />
+          <End Role="ExibitionFights" Type="Self.ExibitionFights" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Actor">
               <PropertyRef Name="ActorID" />
@@ -263,8 +265,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ExibitionFights_City">
-          <End Type="Self.City" Multiplicity="0..1" Role="City" />
-          <End Type="Self.ExibitionFights" Multiplicity="*" Role="ExibitionFights" />
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="ExibitionFights" Type="Self.ExibitionFights" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="City">
               <PropertyRef Name="CityID" />
@@ -275,8 +277,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ExibitionFights_Country">
-          <End Type="Self.Country" Multiplicity="0..1" Role="Country" />
-          <End Type="Self.ExibitionFights" Multiplicity="*" Role="ExibitionFights" />
+          <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+          <End Role="ExibitionFights" Type="Self.ExibitionFights" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Country">
               <PropertyRef Name="CountryID" />
@@ -287,8 +289,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ExibitionFights_State">
-          <End Type="Self.State" Multiplicity="0..1" Role="State" />
-          <End Type="Self.ExibitionFights" Multiplicity="*" Role="ExibitionFights" />
+          <End Role="State" Type="Self.State" Multiplicity="0..1" />
+          <End Role="ExibitionFights" Type="Self.ExibitionFights" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="State">
               <PropertyRef Name="StateID" />
@@ -299,8 +301,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ExibitionFights_Venue">
-          <End Type="Self.Venue" Multiplicity="0..1" Role="Venue" />
-          <End Type="Self.ExibitionFights" Multiplicity="*" Role="ExibitionFights" />
+          <End Role="Venue" Type="Self.Venue" Multiplicity="0..1" />
+          <End Role="ExibitionFights" Type="Self.ExibitionFights" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Venue">
               <PropertyRef Name="VenueID" />
@@ -310,9 +312,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Fight_Actor">
+          <End Role="Actor" Type="Self.Actor" Multiplicity="0..1" />
+          <End Role="Fight" Type="Self.Fight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actor">
+              <PropertyRef Name="ActorID" />
+            </Principal>
+            <Dependent Role="Fight">
+              <PropertyRef Name="Promoter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Fight_City">
-          <End Type="Self.City" Multiplicity="0..1" Role="City" />
-          <End Type="Self.Fight" Multiplicity="*" Role="Fight" />
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="Fight" Type="Self.Fight" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="City">
               <PropertyRef Name="CityID" />
@@ -323,8 +337,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Fight_Country1">
-          <End Type="Self.Country" Multiplicity="0..1" Role="Country" />
-          <End Type="Self.Fight" Multiplicity="*" Role="Fight" />
+          <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+          <End Role="Fight" Type="Self.Fight" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Country">
               <PropertyRef Name="CountryID" />
@@ -335,8 +349,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Fight_State">
-          <End Type="Self.State" Multiplicity="0..1" Role="State" />
-          <End Type="Self.Fight" Multiplicity="*" Role="Fight" />
+          <End Role="State" Type="Self.State" Multiplicity="0..1" />
+          <End Role="Fight" Type="Self.Fight" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="State">
               <PropertyRef Name="StateID" />
@@ -347,8 +361,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Fight_Venue">
-          <End Type="Self.Venue" Multiplicity="0..1" Role="Venue" />
-          <End Type="Self.Fight" Multiplicity="*" Role="Fight" />
+          <End Role="Venue" Type="Self.Venue" Multiplicity="0..1" />
+          <End Role="Fight" Type="Self.Fight" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Venue">
               <PropertyRef Name="VenueID" />
@@ -359,8 +373,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FightBelt_Belt">
-          <End Type="Self.Belt" Multiplicity="1" Role="Belt" />
-          <End Type="Self.FightBelt" Multiplicity="*" Role="FightBelt" />
+          <End Role="Belt" Type="Self.Belt" Multiplicity="1" />
+          <End Role="FightBelt" Type="Self.FightBelt" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Belt">
               <PropertyRef Name="BeltID" />
@@ -371,8 +385,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FightBelt_Fight">
-          <End Type="Self.Fight" Multiplicity="1" Role="Fight" />
-          <End Type="Self.FightBelt" Multiplicity="*" Role="FightBelt" />
+          <End Role="Fight" Type="Self.Fight" Multiplicity="1" />
+          <End Role="FightBelt" Type="Self.FightBelt" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Fight">
               <PropertyRef Name="FightID" />
@@ -383,8 +397,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FightJudge_Fight">
-          <End Type="Self.Fight" Multiplicity="1" Role="Fight" />
-          <End Type="Self.MatchJudge" Multiplicity="*" Role="MatchJudge" />
+          <End Role="Fight" Type="Self.Fight" Multiplicity="1" />
+          <End Role="MatchJudge" Type="Self.MatchJudge" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Fight">
               <PropertyRef Name="FightID" />
@@ -395,8 +409,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FightOpponent_Actor">
-          <End Type="Self.Actor" Multiplicity="0..1" Role="Actor" />
-          <End Type="Self.Fight" Multiplicity="*" Role="Fight" />
+          <End Role="Actor" Type="Self.Actor" Multiplicity="0..1" />
+          <End Role="Fight" Type="Self.Fight" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Actor">
               <PropertyRef Name="ActorID" />
@@ -407,8 +421,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FightReferee_Actor">
-          <End Type="Self.Actor" Multiplicity="0..1" Role="Actor" />
-          <End Type="Self.Fight" Multiplicity="*" Role="Fight" />
+          <End Role="Actor" Type="Self.Actor" Multiplicity="0..1" />
+          <End Role="Fight" Type="Self.Fight" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Actor">
               <PropertyRef Name="ActorID" />
@@ -419,8 +433,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MatchJudge_Actor">
-          <End Type="Self.Actor" Multiplicity="1" Role="Actor" />
-          <End Type="Self.MatchJudge" Multiplicity="*" Role="MatchJudge" />
+          <End Role="Actor" Type="Self.Actor" Multiplicity="1" />
+          <End Role="MatchJudge" Type="Self.MatchJudge" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Actor">
               <PropertyRef Name="ActorID" />
@@ -449,88 +463,92 @@
           <EntitySet Name="Title" EntityType="Self.Title" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Venue" EntityType="Self.Venue" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Actors_Title" Association="Self.FK_Actors_Title">
-            <End EntitySet="Title" Role="Title" />
-            <End EntitySet="Actor" Role="Actor" />
+            <End Role="Title" EntitySet="Title" />
+            <End Role="Actor" EntitySet="Actor" />
           </AssociationSet>
           <AssociationSet Name="FK_AmateurFights_Actor" Association="Self.FK_AmateurFights_Actor">
-            <End EntitySet="Actor" Role="Actor" />
-            <End EntitySet="AmateurFights" Role="AmateurFights" />
+            <End Role="Actor" EntitySet="Actor" />
+            <End Role="AmateurFights" EntitySet="AmateurFights" />
           </AssociationSet>
           <AssociationSet Name="FK_AmateurFights_City" Association="Self.FK_AmateurFights_City">
-            <End EntitySet="City" Role="City" />
-            <End EntitySet="AmateurFights" Role="AmateurFights" />
+            <End Role="City" EntitySet="City" />
+            <End Role="AmateurFights" EntitySet="AmateurFights" />
           </AssociationSet>
           <AssociationSet Name="FK_AmateurFights_Country" Association="Self.FK_AmateurFights_Country">
-            <End EntitySet="Country" Role="Country" />
-            <End EntitySet="AmateurFights" Role="AmateurFights" />
+            <End Role="Country" EntitySet="Country" />
+            <End Role="AmateurFights" EntitySet="AmateurFights" />
           </AssociationSet>
           <AssociationSet Name="FK_AmateurFights_State" Association="Self.FK_AmateurFights_State">
-            <End EntitySet="State" Role="State" />
-            <End EntitySet="AmateurFights" Role="AmateurFights" />
+            <End Role="State" EntitySet="State" />
+            <End Role="AmateurFights" EntitySet="AmateurFights" />
           </AssociationSet>
           <AssociationSet Name="FK_AmateurFights_Venue" Association="Self.FK_AmateurFights_Venue">
-            <End EntitySet="Venue" Role="Venue" />
-            <End EntitySet="AmateurFights" Role="AmateurFights" />
+            <End Role="Venue" EntitySet="Venue" />
+            <End Role="AmateurFights" EntitySet="AmateurFights" />
           </AssociationSet>
           <AssociationSet Name="FK_ExibitionFights_Actor" Association="Self.FK_ExibitionFights_Actor">
-            <End EntitySet="Actor" Role="Actor" />
-            <End EntitySet="ExibitionFights" Role="ExibitionFights" />
+            <End Role="Actor" EntitySet="Actor" />
+            <End Role="ExibitionFights" EntitySet="ExibitionFights" />
           </AssociationSet>
           <AssociationSet Name="FK_ExibitionFights_City" Association="Self.FK_ExibitionFights_City">
-            <End EntitySet="City" Role="City" />
-            <End EntitySet="ExibitionFights" Role="ExibitionFights" />
+            <End Role="City" EntitySet="City" />
+            <End Role="ExibitionFights" EntitySet="ExibitionFights" />
           </AssociationSet>
           <AssociationSet Name="FK_ExibitionFights_Country" Association="Self.FK_ExibitionFights_Country">
-            <End EntitySet="Country" Role="Country" />
-            <End EntitySet="ExibitionFights" Role="ExibitionFights" />
+            <End Role="Country" EntitySet="Country" />
+            <End Role="ExibitionFights" EntitySet="ExibitionFights" />
           </AssociationSet>
           <AssociationSet Name="FK_ExibitionFights_State" Association="Self.FK_ExibitionFights_State">
-            <End EntitySet="State" Role="State" />
-            <End EntitySet="ExibitionFights" Role="ExibitionFights" />
+            <End Role="State" EntitySet="State" />
+            <End Role="ExibitionFights" EntitySet="ExibitionFights" />
           </AssociationSet>
           <AssociationSet Name="FK_ExibitionFights_Venue" Association="Self.FK_ExibitionFights_Venue">
-            <End EntitySet="Venue" Role="Venue" />
-            <End EntitySet="ExibitionFights" Role="ExibitionFights" />
+            <End Role="Venue" EntitySet="Venue" />
+            <End Role="ExibitionFights" EntitySet="ExibitionFights" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fight_Actor" Association="Self.FK_Fight_Actor">
+            <End Role="Actor" EntitySet="Actor" />
+            <End Role="Fight" EntitySet="Fight" />
           </AssociationSet>
           <AssociationSet Name="FK_Fight_City" Association="Self.FK_Fight_City">
-            <End EntitySet="City" Role="City" />
-            <End EntitySet="Fight" Role="Fight" />
+            <End Role="City" EntitySet="City" />
+            <End Role="Fight" EntitySet="Fight" />
           </AssociationSet>
           <AssociationSet Name="FK_Fight_Country1" Association="Self.FK_Fight_Country1">
-            <End EntitySet="Country" Role="Country" />
-            <End EntitySet="Fight" Role="Fight" />
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Fight" EntitySet="Fight" />
           </AssociationSet>
           <AssociationSet Name="FK_Fight_State" Association="Self.FK_Fight_State">
-            <End EntitySet="State" Role="State" />
-            <End EntitySet="Fight" Role="Fight" />
+            <End Role="State" EntitySet="State" />
+            <End Role="Fight" EntitySet="Fight" />
           </AssociationSet>
           <AssociationSet Name="FK_Fight_Venue" Association="Self.FK_Fight_Venue">
-            <End EntitySet="Venue" Role="Venue" />
-            <End EntitySet="Fight" Role="Fight" />
+            <End Role="Venue" EntitySet="Venue" />
+            <End Role="Fight" EntitySet="Fight" />
           </AssociationSet>
           <AssociationSet Name="FK_FightBelt_Belt" Association="Self.FK_FightBelt_Belt">
-            <End EntitySet="Belt" Role="Belt" />
-            <End EntitySet="FightBelt" Role="FightBelt" />
+            <End Role="Belt" EntitySet="Belt" />
+            <End Role="FightBelt" EntitySet="FightBelt" />
           </AssociationSet>
           <AssociationSet Name="FK_FightBelt_Fight" Association="Self.FK_FightBelt_Fight">
-            <End EntitySet="Fight" Role="Fight" />
-            <End EntitySet="FightBelt" Role="FightBelt" />
+            <End Role="Fight" EntitySet="Fight" />
+            <End Role="FightBelt" EntitySet="FightBelt" />
           </AssociationSet>
           <AssociationSet Name="FK_FightJudge_Fight" Association="Self.FK_FightJudge_Fight">
-            <End EntitySet="Fight" Role="Fight" />
-            <End EntitySet="MatchJudge" Role="MatchJudge" />
+            <End Role="Fight" EntitySet="Fight" />
+            <End Role="MatchJudge" EntitySet="MatchJudge" />
           </AssociationSet>
           <AssociationSet Name="FK_FightOpponent_Actor" Association="Self.FK_FightOpponent_Actor">
-            <End EntitySet="Actor" Role="Actor" />
-            <End EntitySet="Fight" Role="Fight" />
+            <End Role="Actor" EntitySet="Actor" />
+            <End Role="Fight" EntitySet="Fight" />
           </AssociationSet>
           <AssociationSet Name="FK_FightReferee_Actor" Association="Self.FK_FightReferee_Actor">
-            <End EntitySet="Actor" Role="Actor" />
-            <End EntitySet="Fight" Role="Fight" />
+            <End Role="Actor" EntitySet="Actor" />
+            <End Role="Fight" EntitySet="Fight" />
           </AssociationSet>
           <AssociationSet Name="FK_MatchJudge_Actor" Association="Self.FK_MatchJudge_Actor">
-            <End EntitySet="Actor" Role="Actor" />
-            <End EntitySet="MatchJudge" Role="MatchJudge" />
+            <End Role="Actor" EntitySet="Actor" />
+            <End Role="MatchJudge" EntitySet="MatchJudge" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -545,7 +563,6 @@
           <EntitySet Name="DeerLakes" EntityType="AliData2012Model.DeerLake" />
           <EntitySet Name="ExibitionFights" EntityType="AliData2012Model.ExibitionFight" />
           <EntitySet Name="Facts" EntityType="AliData2012Model.Fact" />
-          <EntitySet Name="Fights" EntityType="AliData2012Model.Fight" />
           <EntitySet Name="Provinces" EntityType="AliData2012Model.Province" />
           <EntitySet Name="Quizs" EntityType="AliData2012Model.Quiz" />
           <EntitySet Name="States" EntityType="AliData2012Model.State" />
@@ -563,14 +580,6 @@
           <AssociationSet Name="FK_ExibitionFights_Actor" Association="AliData2012Model.FK_ExibitionFights_Actor">
             <End EntitySet="Actors" Role="Actor" />
             <End EntitySet="ExibitionFights" Role="ExibitionFight" />
-          </AssociationSet>
-          <AssociationSet Name="FK_FightOpponent_Actor" Association="AliData2012Model.FK_FightOpponent_Actor">
-            <End EntitySet="Actors" Role="Actor" />
-            <End EntitySet="Fights" Role="Fight" />
-          </AssociationSet>
-          <AssociationSet Name="FK_FightReferee_Actor" Association="AliData2012Model.FK_FightReferee_Actor">
-            <End EntitySet="Actors" Role="Actor" />
-            <End EntitySet="Fights" Role="Fight" />
           </AssociationSet>
           <AssociationSet Name="FK_AmateurFights_City" Association="AliData2012Model.FK_AmateurFights_City">
             <End EntitySet="Cities" Role="City" />
@@ -592,17 +601,9 @@
             <End EntitySet="Cities" Role="City" />
             <End EntitySet="ExibitionFights" Role="ExibitionFight" />
           </AssociationSet>
-          <AssociationSet Name="FK_Fight_City" Association="AliData2012Model.FK_Fight_City">
-            <End EntitySet="Cities" Role="City" />
-            <End EntitySet="Fights" Role="Fight" />
-          </AssociationSet>
           <AssociationSet Name="FK_ExibitionFights_Country" Association="AliData2012Model.FK_ExibitionFights_Country">
             <End EntitySet="Countries" Role="Country" />
             <End EntitySet="ExibitionFights" Role="ExibitionFight" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Fight_Country1" Association="AliData2012Model.FK_Fight_Country1">
-            <End EntitySet="Countries" Role="Country" />
-            <End EntitySet="Fights" Role="Fight" />
           </AssociationSet>
           <AssociationSet Name="FK_ExibitionFights_State" Association="AliData2012Model.FK_ExibitionFights_State">
             <End EntitySet="States" Role="State" />
@@ -612,24 +613,45 @@
             <End EntitySet="Venues" Role="Venue" />
             <End EntitySet="ExibitionFights" Role="ExibitionFight" />
           </AssociationSet>
+          <EntitySet Name="Belts" EntityType="AliData2012Model.Belt" />
+          <EntitySet Name="Fights" EntityType="AliData2012Model.Fight" />
+          <AssociationSet Name="FK_Fight_Actor" Association="AliData2012Model.FK_Fight_Actor">
+            <End Role="Actor" EntitySet="Actors" />
+            <End Role="Fight" EntitySet="Fights" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FightOpponent_Actor" Association="AliData2012Model.FK_FightOpponent_Actor">
+            <End Role="Actor" EntitySet="Actors" />
+            <End Role="Fight" EntitySet="Fights" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FightReferee_Actor" Association="AliData2012Model.FK_FightReferee_Actor">
+            <End Role="Actor" EntitySet="Actors" />
+            <End Role="Fight" EntitySet="Fights" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fight_City" Association="AliData2012Model.FK_Fight_City">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="Fight" EntitySet="Fights" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fight_Country1" Association="AliData2012Model.FK_Fight_Country1">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Fight" EntitySet="Fights" />
+          </AssociationSet>
           <AssociationSet Name="FK_Fight_State" Association="AliData2012Model.FK_Fight_State">
-            <End EntitySet="States" Role="State" />
-            <End EntitySet="Fights" Role="Fight" />
+            <End Role="State" EntitySet="States" />
+            <End Role="Fight" EntitySet="Fights" />
           </AssociationSet>
           <AssociationSet Name="FK_Fight_Venue" Association="AliData2012Model.FK_Fight_Venue">
-            <End EntitySet="Venues" Role="Venue" />
-            <End EntitySet="Fights" Role="Fight" />
+            <End Role="Venue" EntitySet="Venues" />
+            <End Role="Fight" EntitySet="Fights" />
           </AssociationSet>
-          <AssociationSet Name="MatchJudge1" Association="AliData2012Model.MatchJudge1">
-            <End EntitySet="Fights" Role="Fight" />
-            <End EntitySet="Actors" Role="Actor" />
-          </AssociationSet>
-          <EntitySet Name="Belts" EntityType="AliData2012Model.Belt" />
           <AssociationSet Name="FightBelt" Association="AliData2012Model.FightBelt">
-            <End EntitySet="Belts" Role="Belt" />
-            <End EntitySet="Fights" Role="Fight" />
+            <End Role="Belt" EntitySet="Belts" />
+            <End Role="Fight" EntitySet="Fights" />
           </AssociationSet>
-        </EntityContainer>
+          <AssociationSet Name="MatchJudge" Association="AliData2012Model.MatchJudge">
+            <End Role="Fight" EntitySet="Fights" />
+            <End Role="Actor" EntitySet="Actors" />
+          </AssociationSet>
+          </EntityContainer>
         <EntityType Name="Actor">
           <Key>
             <PropertyRef Name="ActorID" />
@@ -644,10 +666,11 @@
           <NavigationProperty Name="Title" Relationship="AliData2012Model.FK_Actors_Title" FromRole="Actor" ToRole="Title" />
           <NavigationProperty Name="AmateurFights" Relationship="AliData2012Model.FK_AmateurFights_Actor" FromRole="Actor" ToRole="AmateurFight" />
           <NavigationProperty Name="ExibitionFights" Relationship="AliData2012Model.FK_ExibitionFights_Actor" FromRole="Actor" ToRole="ExibitionFight" />
-          <NavigationProperty Name="Fights" Relationship="AliData2012Model.FK_FightOpponent_Actor" FromRole="Actor" ToRole="Fight" />
-          <NavigationProperty Name="Fights1" Relationship="AliData2012Model.FK_FightReferee_Actor" FromRole="Actor" ToRole="Fight" />
-          <NavigationProperty Name="Fights2" Relationship="AliData2012Model.MatchJudge1" FromRole="Actor" ToRole="Fight" />
-        </EntityType>
+          <NavigationProperty Name="Fights" Relationship="AliData2012Model.FK_Fight_Actor" FromRole="Actor" ToRole="Fight" />
+          <NavigationProperty Name="Fights1" Relationship="AliData2012Model.FK_FightOpponent_Actor" FromRole="Actor" ToRole="Fight" />
+          <NavigationProperty Name="Fights2" Relationship="AliData2012Model.FK_FightReferee_Actor" FromRole="Actor" ToRole="Fight" />
+          <NavigationProperty Name="Fights3" Relationship="AliData2012Model.MatchJudge" FromRole="Actor" ToRole="Fight" />
+          </EntityType>
         <EntityType Name="AmateurFight">
           <Key>
             <PropertyRef Name="AmateurFightID" />
@@ -721,49 +744,6 @@
           </Key>
           <Property Name="FactID" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
           <Property Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" Type="String" />
-        </EntityType>
-        <EntityType Name="Fight">
-          <Key>
-            <PropertyRef Name="FightID" />
-          </Key>
-          <Property Name="FightID" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
-          <Property Name="Date" Nullable="false" Precision="0" Type="DateTime" />
-          <Property Name="OpponentID" Type="Int32" />
-          <Property Name="VenueID" Type="Int32" />
-          <Property Name="CityID" Type="Int32" />
-          <Property Name="CountryID" Type="Int32" />
-          <Property Name="StateID" Type="Int32" />
-          <Property Name="Province" MaxLength="50" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="AlisWeight" Precision="5" Scale="2" Type="Decimal" />
-          <Property Name="OpponentsWeight" Precision="5" Scale="2" Type="Decimal" />
-          <Property Name="Result" MaxLength="50" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="ResultDescription" Type="Int32" />
-          <Property Name="Rounds" Type="Int32" />
-          <Property Name="WonInRound" Type="Int32" />
-          <Property Name="StoppageTime" Precision="0" Type="Time" />
-          <Property Name="BeltID" Type="Int32" />
-          <Property Name="RefereeID" Type="Int32" />
-          <Property Name="Alias" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="Attendence" Type="Int32" />
-          <Property Name="WorlwideAudience" Type="Int32" />
-          <Property Name="LiveGate" Precision="18" Scale="0" Type="Decimal" />
-          <Property Name="Promoter" MaxLength="50" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="AliPurse" Precision="18" Scale="0" Type="Decimal" />
-          <Property Name="AliPercentageOfReceipts" Precision="3" Scale="1" Type="Decimal" />
-          <Property Name="OpponentPurse" Precision="18" Scale="0" Type="Decimal" />
-          <Property Name="OpponentPercentageOfReceipts" Precision="3" Scale="1" Type="Decimal" />
-          <Property Name="LocalTime" Precision="7" Type="Time" />
-          <Property Name="BettingOdds" MaxLength="50" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="NumberUSClosedCircuitLocation" Type="Int32" />
-          <Property Name="NumberOfBroadcastCountries" Type="Int32" />
-          <NavigationProperty Name="Actor" Relationship="AliData2012Model.FK_FightOpponent_Actor" FromRole="Fight" ToRole="Actor" />
-          <NavigationProperty Name="Actor1" Relationship="AliData2012Model.FK_FightReferee_Actor" FromRole="Fight" ToRole="Actor" />
-          <NavigationProperty Name="City" Relationship="AliData2012Model.FK_Fight_City" FromRole="Fight" ToRole="City" />
-          <NavigationProperty Name="Country" Relationship="AliData2012Model.FK_Fight_Country1" FromRole="Fight" ToRole="Country" />
-          <NavigationProperty Name="State" Relationship="AliData2012Model.FK_Fight_State" FromRole="Fight" ToRole="State" />
-          <NavigationProperty Name="Venue" Relationship="AliData2012Model.FK_Fight_Venue" FromRole="Fight" ToRole="Venue" />
-          <NavigationProperty Name="Actors" Relationship="AliData2012Model.MatchJudge1" FromRole="Fight" ToRole="Actor" />
-          <NavigationProperty Name="Belts" Relationship="AliData2012Model.FightBelt" FromRole="Fight" ToRole="Belt" />
         </EntityType>
         <EntityType Name="Province">
           <Key>
@@ -852,30 +832,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_FightOpponent_Actor">
-          <End Type="AliData2012Model.Actor" Multiplicity="0..1" Role="Actor" />
-          <End Type="AliData2012Model.Fight" Multiplicity="*" Role="Fight" />
-          <ReferentialConstraint>
-            <Principal Role="Actor">
-              <PropertyRef Name="ActorID" />
-            </Principal>
-            <Dependent Role="Fight">
-              <PropertyRef Name="OpponentID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_FightReferee_Actor">
-          <End Type="AliData2012Model.Actor" Multiplicity="0..1" Role="Actor" />
-          <End Type="AliData2012Model.Fight" Multiplicity="*" Role="Fight" />
-          <ReferentialConstraint>
-            <Principal Role="Actor">
-              <PropertyRef Name="ActorID" />
-            </Principal>
-            <Dependent Role="Fight">
-              <PropertyRef Name="RefereeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_AmateurFights_City">
           <End Type="AliData2012Model.City" Multiplicity="0..1" Role="City" />
           <End Type="AliData2012Model.AmateurFight" Multiplicity="*" Role="AmateurFight" />
@@ -936,18 +892,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Fight_City">
-          <End Type="AliData2012Model.City" Multiplicity="0..1" Role="City" />
-          <End Type="AliData2012Model.Fight" Multiplicity="*" Role="Fight" />
-          <ReferentialConstraint>
-            <Principal Role="City">
-              <PropertyRef Name="CityID" />
-            </Principal>
-            <Dependent Role="Fight">
-              <PropertyRef Name="CityID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ExibitionFights_Country">
           <End Type="AliData2012Model.Country" Multiplicity="0..1" Role="Country" />
           <End Type="AliData2012Model.ExibitionFight" Multiplicity="*" Role="ExibitionFight" />
@@ -956,18 +900,6 @@
               <PropertyRef Name="CountryID" />
             </Principal>
             <Dependent Role="ExibitionFight">
-              <PropertyRef Name="CountryID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Fight_Country1">
-          <End Type="AliData2012Model.Country" Multiplicity="0..1" Role="Country" />
-          <End Type="AliData2012Model.Fight" Multiplicity="*" Role="Fight" />
-          <ReferentialConstraint>
-            <Principal Role="Country">
-              <PropertyRef Name="CountryID" />
-            </Principal>
-            <Dependent Role="Fight">
               <PropertyRef Name="CountryID" />
             </Dependent>
           </ReferentialConstraint>
@@ -996,9 +928,124 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Belt">
+          <Key>
+            <PropertyRef Name="BeltID" />
+          </Key>
+          <Property Name="BeltID" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="BeltName" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="BeltAbbreviation" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+          <NavigationProperty Name="Fights" Relationship="AliData2012Model.FightBelt" FromRole="Belt" ToRole="Fight" />
+        </EntityType>
+        <EntityType Name="Fight">
+          <Key>
+            <PropertyRef Name="FightID" />
+          </Key>
+          <Property Name="FightID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="OpponentID" Type="Int32" />
+          <Property Name="OpponentNickname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VenueID" Type="Int32" />
+          <Property Name="CityID" Type="Int32" />
+          <Property Name="CountryID" Type="Int32" />
+          <Property Name="StateID" Type="Int32" />
+          <Property Name="Province" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AlisWeight" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="OpponentsWeight" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="Result" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ResultDescription" Type="Int32" />
+          <Property Name="Rounds" Type="Int32" />
+          <Property Name="WonInRound" Type="Int32" />
+          <Property Name="StoppageTime" Type="Time" Precision="0" />
+          <Property Name="BeltID" Type="Int32" />
+          <Property Name="RefereeID" Type="Int32" />
+          <Property Name="Alias" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Attendence" Type="Int32" />
+          <Property Name="WorlwideAudience" Type="Int32" />
+          <Property Name="LiveGate" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Promoter" Type="Int32" />
+          <Property Name="AliPurse" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="AliPercentageOfReceipts" Type="Decimal" Precision="3" Scale="1" />
+          <Property Name="OpponentPurse" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OpponentPercentageOfReceipts" Type="Decimal" Precision="3" Scale="1" />
+          <Property Name="LocalTime" Type="Time" Precision="7" />
+          <Property Name="BettingOdds" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NumberUSClosedCircuitLocation" Type="Int32" />
+          <Property Name="NumberOfBroadcastCountries" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Actor" Relationship="AliData2012Model.FK_Fight_Actor" FromRole="Fight" ToRole="Actor" />
+          <NavigationProperty Name="Actor1" Relationship="AliData2012Model.FK_FightOpponent_Actor" FromRole="Fight" ToRole="Actor" />
+          <NavigationProperty Name="Actor2" Relationship="AliData2012Model.FK_FightReferee_Actor" FromRole="Fight" ToRole="Actor" />
+          <NavigationProperty Name="City" Relationship="AliData2012Model.FK_Fight_City" FromRole="Fight" ToRole="City" />
+          <NavigationProperty Name="Country" Relationship="AliData2012Model.FK_Fight_Country1" FromRole="Fight" ToRole="Country" />
+          <NavigationProperty Name="State" Relationship="AliData2012Model.FK_Fight_State" FromRole="Fight" ToRole="State" />
+          <NavigationProperty Name="Venue" Relationship="AliData2012Model.FK_Fight_Venue" FromRole="Fight" ToRole="Venue" />
+          <NavigationProperty Name="Belts" Relationship="AliData2012Model.FightBelt" FromRole="Fight" ToRole="Belt" />
+          <NavigationProperty Name="Actors" Relationship="AliData2012Model.MatchJudge" FromRole="Fight" ToRole="Actor" />
+        </EntityType>
+        <Association Name="FK_Fight_Actor">
+          <End Type="AliData2012Model.Actor" Role="Actor" Multiplicity="0..1" />
+          <End Type="AliData2012Model.Fight" Role="Fight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actor">
+              <PropertyRef Name="ActorID" />
+            </Principal>
+            <Dependent Role="Fight">
+              <PropertyRef Name="Promoter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FightOpponent_Actor">
+          <End Type="AliData2012Model.Actor" Role="Actor" Multiplicity="0..1" />
+          <End Type="AliData2012Model.Fight" Role="Fight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actor">
+              <PropertyRef Name="ActorID" />
+            </Principal>
+            <Dependent Role="Fight">
+              <PropertyRef Name="OpponentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FightReferee_Actor">
+          <End Type="AliData2012Model.Actor" Role="Actor" Multiplicity="0..1" />
+          <End Type="AliData2012Model.Fight" Role="Fight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actor">
+              <PropertyRef Name="ActorID" />
+            </Principal>
+            <Dependent Role="Fight">
+              <PropertyRef Name="RefereeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fight_City">
+          <End Type="AliData2012Model.City" Role="City" Multiplicity="0..1" />
+          <End Type="AliData2012Model.Fight" Role="Fight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="Fight">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fight_Country1">
+          <End Type="AliData2012Model.Country" Role="Country" Multiplicity="0..1" />
+          <End Type="AliData2012Model.Fight" Role="Fight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryID" />
+            </Principal>
+            <Dependent Role="Fight">
+              <PropertyRef Name="CountryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Fight_State">
-          <End Type="AliData2012Model.State" Multiplicity="0..1" Role="State" />
-          <End Type="AliData2012Model.Fight" Multiplicity="*" Role="Fight" />
+          <End Type="AliData2012Model.State" Role="State" Multiplicity="0..1" />
+          <End Type="AliData2012Model.Fight" Role="Fight" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="State">
               <PropertyRef Name="StateID" />
@@ -1009,8 +1056,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Fight_Venue">
-          <End Type="AliData2012Model.Venue" Multiplicity="0..1" Role="Venue" />
-          <End Type="AliData2012Model.Fight" Multiplicity="*" Role="Fight" />
+          <End Type="AliData2012Model.Venue" Role="Venue" Multiplicity="0..1" />
+          <End Type="AliData2012Model.Fight" Role="Fight" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Venue">
               <PropertyRef Name="VenueID" />
@@ -1020,24 +1067,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="MatchJudge1">
-          <End Type="AliData2012Model.Fight" Multiplicity="*" Role="Fight" />
-          <End Type="AliData2012Model.Actor" Multiplicity="*" Role="Actor" />
-        </Association>
-        <EntityType Name="Belt">
-          <Key>
-            <PropertyRef Name="BeltID" />
-          </Key>
-          <Property Name="BeltID" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
-          <Property Name="BeltName" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
-          <Property Name="BeltAbbreviation" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
-          <NavigationProperty Name="Fights" Relationship="AliData2012Model.FightBelt" FromRole="Belt" ToRole="Fight" />
-        </EntityType>
         <Association Name="FightBelt">
-          <End Type="AliData2012Model.Belt" Multiplicity="*" Role="Belt" />
-          <End Type="AliData2012Model.Fight" Multiplicity="*" Role="Fight" />
+          <End Type="AliData2012Model.Belt" Role="Belt" Multiplicity="*" />
+          <End Type="AliData2012Model.Fight" Role="Fight" Multiplicity="*" />
         </Association>
-      </Schema>
+        <Association Name="MatchJudge">
+          <End Type="AliData2012Model.Fight" Role="Fight" Multiplicity="*" />
+          <End Type="AliData2012Model.Actor" Role="Actor" Multiplicity="*" />
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -1120,42 +1158,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Fights">
-            <EntityTypeMapping TypeName="AliData2012Model.Fight">
-              <MappingFragment StoreEntitySet="Fight">
-                <ScalarProperty Name="NumberOfBroadcastCountries" ColumnName="NumberOfBroadcastCountries" />
-                <ScalarProperty Name="NumberUSClosedCircuitLocation" ColumnName="NumberUSClosedCircuitLocation" />
-                <ScalarProperty Name="BettingOdds" ColumnName="BettingOdds" />
-                <ScalarProperty Name="LocalTime" ColumnName="LocalTime" />
-                <ScalarProperty Name="OpponentPercentageOfReceipts" ColumnName="OpponentPercentageOfReceipts" />
-                <ScalarProperty Name="OpponentPurse" ColumnName="OpponentPurse" />
-                <ScalarProperty Name="AliPercentageOfReceipts" ColumnName="AliPercentageOfReceipts" />
-                <ScalarProperty Name="AliPurse" ColumnName="AliPurse" />
-                <ScalarProperty Name="Promoter" ColumnName="Promoter" />
-                <ScalarProperty Name="LiveGate" ColumnName="LiveGate" />
-                <ScalarProperty Name="WorlwideAudience" ColumnName="WorlwideAudience" />
-                <ScalarProperty Name="Attendence" ColumnName="Attendence" />
-                <ScalarProperty Name="Alias" ColumnName="Alias" />
-                <ScalarProperty Name="RefereeID" ColumnName="RefereeID" />
-                <ScalarProperty Name="BeltID" ColumnName="BeltID" />
-                <ScalarProperty Name="StoppageTime" ColumnName="StoppageTime" />
-                <ScalarProperty Name="WonInRound" ColumnName="WonInRound" />
-                <ScalarProperty Name="Rounds" ColumnName="Rounds" />
-                <ScalarProperty Name="ResultDescription" ColumnName="ResultDescription" />
-                <ScalarProperty Name="Result" ColumnName="Result" />
-                <ScalarProperty Name="OpponentsWeight" ColumnName="OpponentsWeight" />
-                <ScalarProperty Name="AlisWeight" ColumnName="AlisWeight" />
-                <ScalarProperty Name="Province" ColumnName="Province" />
-                <ScalarProperty Name="StateID" ColumnName="StateID" />
-                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
-                <ScalarProperty Name="CityID" ColumnName="CityID" />
-                <ScalarProperty Name="VenueID" ColumnName="VenueID" />
-                <ScalarProperty Name="OpponentID" ColumnName="OpponentID" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="FightID" ColumnName="FightID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Provinces">
             <EntityTypeMapping TypeName="AliData2012Model.Province">
               <MappingFragment StoreEntitySet="Province">
@@ -1206,14 +1208,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="MatchJudge1" TypeName="AliData2012Model.MatchJudge1" StoreEntitySet="MatchJudge">
-            <EndProperty Name="Actor">
-              <ScalarProperty Name="ActorID" ColumnName="ActorID" />
-            </EndProperty>
-            <EndProperty Name="Fight">
-              <ScalarProperty Name="FightID" ColumnName="FightID" />
-            </EndProperty>
-          </AssociationSetMapping>
           <EntitySetMapping Name="Belts">
             <EntityTypeMapping TypeName="AliData2012Model.Belt">
               <MappingFragment StoreEntitySet="Belt">
@@ -1223,12 +1217,58 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Fights">
+            <EntityTypeMapping TypeName="AliData2012Model.Fight">
+              <MappingFragment StoreEntitySet="Fight">
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="NumberOfBroadcastCountries" ColumnName="NumberOfBroadcastCountries" />
+                <ScalarProperty Name="NumberUSClosedCircuitLocation" ColumnName="NumberUSClosedCircuitLocation" />
+                <ScalarProperty Name="BettingOdds" ColumnName="BettingOdds" />
+                <ScalarProperty Name="LocalTime" ColumnName="LocalTime" />
+                <ScalarProperty Name="OpponentPercentageOfReceipts" ColumnName="OpponentPercentageOfReceipts" />
+                <ScalarProperty Name="OpponentPurse" ColumnName="OpponentPurse" />
+                <ScalarProperty Name="AliPercentageOfReceipts" ColumnName="AliPercentageOfReceipts" />
+                <ScalarProperty Name="AliPurse" ColumnName="AliPurse" />
+                <ScalarProperty Name="Promoter" ColumnName="Promoter" />
+                <ScalarProperty Name="LiveGate" ColumnName="LiveGate" />
+                <ScalarProperty Name="WorlwideAudience" ColumnName="WorlwideAudience" />
+                <ScalarProperty Name="Attendence" ColumnName="Attendence" />
+                <ScalarProperty Name="Alias" ColumnName="Alias" />
+                <ScalarProperty Name="RefereeID" ColumnName="RefereeID" />
+                <ScalarProperty Name="BeltID" ColumnName="BeltID" />
+                <ScalarProperty Name="StoppageTime" ColumnName="StoppageTime" />
+                <ScalarProperty Name="WonInRound" ColumnName="WonInRound" />
+                <ScalarProperty Name="Rounds" ColumnName="Rounds" />
+                <ScalarProperty Name="ResultDescription" ColumnName="ResultDescription" />
+                <ScalarProperty Name="Result" ColumnName="Result" />
+                <ScalarProperty Name="OpponentsWeight" ColumnName="OpponentsWeight" />
+                <ScalarProperty Name="AlisWeight" ColumnName="AlisWeight" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="StateID" ColumnName="StateID" />
+                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+                <ScalarProperty Name="VenueID" ColumnName="VenueID" />
+                <ScalarProperty Name="OpponentNickname" ColumnName="OpponentNickname" />
+                <ScalarProperty Name="OpponentID" ColumnName="OpponentID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="FightID" ColumnName="FightID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <AssociationSetMapping Name="FightBelt" TypeName="AliData2012Model.FightBelt" StoreEntitySet="FightBelt">
             <EndProperty Name="Fight">
               <ScalarProperty Name="FightID" ColumnName="FightID" />
             </EndProperty>
             <EndProperty Name="Belt">
               <ScalarProperty Name="BeltID" ColumnName="BeltID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="MatchJudge" TypeName="AliData2012Model.MatchJudge" StoreEntitySet="MatchJudge">
+            <EndProperty Name="Actor">
+              <ScalarProperty Name="ActorID" ColumnName="ActorID" />
+            </EndProperty>
+            <EndProperty Name="Fight">
+              <ScalarProperty Name="FightID" ColumnName="FightID" />
             </EndProperty>
           </AssociationSetMapping>
         </EntityContainerMapping>

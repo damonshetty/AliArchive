@@ -1,4 +1,6 @@
-﻿window.app = angular.module('aliApp', ['ngRoute'])
+﻿var window = {};
+
+window.app = angular.module('aliApp', ['ngRoute'])
     .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 
         $routeProvider
@@ -36,7 +38,12 @@
 
     }])
 
+.directive('taleofThetape', function () {
 
-
+    return {
+        restrict: 'E',
+        templateUrl: '/Partials/TaleOfTheTape.html',
+    }
+})
 
 ;

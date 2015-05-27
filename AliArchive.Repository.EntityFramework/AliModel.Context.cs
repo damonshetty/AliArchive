@@ -32,7 +32,6 @@ namespace AliArchive.Repository.EntityFramework
         public virtual DbSet<DeerLake> DeerLakes { get; set; }
         public virtual DbSet<ExibitionFight> ExibitionFights { get; set; }
         public virtual DbSet<Fact> Facts { get; set; }
-        public virtual DbSet<Fight> Fights { get; set; }
         public virtual DbSet<Province> Provinces { get; set; }
         public virtual DbSet<Quiz> Quizs { get; set; }
         public virtual DbSet<State> States { get; set; }
@@ -40,5 +39,6 @@ namespace AliArchive.Repository.EntityFramework
         public virtual DbSet<Title> Titles { get; set; }
         public virtual DbSet<Venue> Venues { get; set; }
         public virtual DbSet<Belt> Belts { get; set; }
+        public virtual DbSet<Fight> Fights { get; set; }
     }
 }
