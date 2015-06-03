@@ -16,14 +16,13 @@ namespace AliArchive.Repository.EntityFramework
     {
         public Fight()
         {
+            this.MatchJudges = new HashSet<MatchJudge>();
             this.Belts = new HashSet<Belt>();
-            this.Actors = new HashSet<Actor>();
         }
     
         public int FightID { get; set; }
         public System.DateTime Date { get; set; }
         public Nullable<int> OpponentID { get; set; }
-        public string OpponentNickname { get; set; }
         public Nullable<int> VenueID { get; set; }
         public Nullable<int> CityID { get; set; }
         public Nullable<int> CountryID { get; set; }
@@ -60,7 +59,7 @@ namespace AliArchive.Repository.EntityFramework
         public virtual Country Country { get; set; }
         public virtual State State { get; set; }
         public virtual Venue Venue { get; set; }
+        public virtual ICollection<MatchJudge> MatchJudges { get; set; }
         public virtual ICollection<Belt> Belts { get; set; }
-        public virtual ICollection<Actor> Actors { get; set; }
     }
 }

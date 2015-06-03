@@ -21,7 +21,7 @@ namespace AliArchive.Repository.EntityFramework
             this.Fights = new HashSet<Fight>();
             this.Fights1 = new HashSet<Fight>();
             this.Fights2 = new HashSet<Fight>();
-            this.Fights3 = new HashSet<Fight>();
+            this.MatchJudges = new HashSet<MatchJudge>();
         }
     
         public int ActorID { get; set; }
@@ -38,6 +38,6 @@ namespace AliArchive.Repository.EntityFramework
         public virtual ICollection<Fight> Fights { get; set; }
         public virtual ICollection<Fight> Fights1 { get; set; }
         public virtual ICollection<Fight> Fights2 { get; set; }
-        public virtual ICollection<Fight> Fights3 { get; set; }
+        public virtual ICollection<MatchJudge> MatchJudges { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿<p class="text-warning"><strong>To filter, click on Opponent's name, Referree, Judge, Venue, City, State or Country. Then click RESET button, top right of table.</strong></p>
+﻿<p class="text-warning"><strong>To filter, click on Opponent, Referree, Judge, Venue, City, State or Country. To return, click the RESET button, top right of table.</strong></p>
 <p><strong>Professional Record</strong></p>
 
 <!--Pro Record-->
@@ -7,7 +7,7 @@
             <tr style="background-color:#e5e5e5;">
                 <th width="100px"><strong>Date</strong></th>
                 <th colspan="2"><strong>Match</strong></th>
-                <th><strong>Result</strong></th>
+                <th width="80px"><strong>Result</strong></th>
                 <th><strong>Venue</strong></th>
                 <th><strong>Location</strong><span style="float:right"><button class="btn btn-xs btn-warning" title="Reset" ng-click="resetClick()">RESET</button></span></th>
             </tr>
@@ -33,15 +33,16 @@
                     <p><span class="text-info" ng-show="fight.Alias"><strong>"{{fight.Alias}}"</strong></span> <span class="text-primary" style="text-decoration:underline" ng-repeat="item in fight.Belts"><strong> {{item}} </strong></span></p>
                     <small ng-show="fight.RefereeFirstName"> Referee: <strong class="text-success" style="cursor:pointer" ng-click="refereeFilterClick(fight.RefereeSecondName)">{{fight.RefereeFirstName}} {{fight.RefereeSecondName}}</strong><br /></small>
                     <small ng-show="fight.JudgeFirst.length"> Judges: <span class="text-danger" ng-repeat="item in fight.JudgeFirst track by $index"><strong style="cursor:pointer" ng-click="JudgeFilterClick(fight.JudgeSecond[$index], $index)"> {{fight.JudgeFirst[$index]}} {{fight.JudgeSecond[$index]}} | </strong></span><br /></small>
-                    <small ng-show="fight.Odds"> Odds: <strong>{{fight.Odds}}</strong></small> <small ng-show="fight.PromoterFirst"> Promoter: <strong>{{fight.PromoterFirst}} {{fight.PromoterSecond}}</strong></small>
-
+                    <small style="cursor:pointer" ng-click="promoterFilterClick(fight.PromoterSecond)" ng-show="fight.PromoterFirst"> Promoter: <strong>{{fight.PromoterFirst}} {{fight.PromoterSecond}} </strong></small>
+                    <small ng-show="fight.Odds"> Odds: <strong>{{fight.Odds}}</strong></small>
                     <div ng-show="fight.WorldAudience">
                         <!--<taleof-thetape></taleof-thetape>-->
                     </div>
                 </td>
                 <td style="background-color:#f2f5f1">
                     <small><strong>{{fight.WonInRound}} of {{fight.Rounds}} rds</strong></small><br />
-                    <small>{{fight.StoppageTime}}</small>
+                    <small ng-show="fight.StoppageTime">{{fight.StoppageTime}}<br /></small>
+                    <span class="text-danger" ng-repeat="score in fight.JudgeScore track by $index"><small><strong>{{score}}</strong></small><br /></span>
                 </td>
                 <td style="background-color:#e7ebe4">
                     <small ng-show="fight.Attendence"> Attendence: <strong>{{fight.Attendence | number}}</strong><br /></small>
@@ -49,8 +50,8 @@
                     <small ng-show="fight.WorldAudience"> Worldwide Audience: <strong>{{fight.WorldAudience | number}}</strong></small>
                 </td>
                 <td style="background-color:#e7ebe4">
-                    <small> Ali Purse: <strong>{{fight.AliPurse | currency : $ : 0}} {{fight.AliPercentage}}</strong></small><br />
-                    <small> Opponent Purse: <strong>{{fight.OpponentPurse | currency : $ : 0}} {{fight.OpponentPercentage}}</strong></small><br />
+                    <small> Ali Purse: <strong>{{fight.AliPurse | currency : $ : 0}} {{fight.AliPercentage}}</strong><br /></small>
+                    <small> Opponent Purse: <strong>{{fight.OpponentPurse | currency : $ : 0}} {{fight.OpponentPercentage}}</strong><br /></small>
                     <small ng-show="fight.NumberClosedCircuitUS">US Closed Circuit Locations: <strong>{{fight.NumberClosedCircuitUS}}</strong><br /></small>
                     <small ng-show="fight.NumberBroadcastCountries">Broadcast Countries: <strong>{{fight.NumberBroadcastCountries}}</strong></small>
                 </td>

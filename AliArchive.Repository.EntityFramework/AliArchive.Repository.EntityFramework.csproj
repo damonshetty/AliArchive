@@ -96,6 +96,9 @@
       <DependentUpon>AliModel.tt</DependentUpon>
     </Compile>
     <Compile Include="IRepository.cs" />
+    <Compile Include="MatchJudge.cs">
+      <DependentUpon>AliModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Province.cs">
       <DependentUpon>AliModel.tt</DependentUpon>
@@ -104,9 +107,6 @@
       <DependentUpon>AliModel.tt</DependentUpon>
     </Compile>
     <Compile Include="State.cs">
-      <DependentUpon>AliModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
       <DependentUpon>AliModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Title.cs">

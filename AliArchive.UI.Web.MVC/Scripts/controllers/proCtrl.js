@@ -1,24 +1,19 @@
 ﻿window.app.controller('proCtrl', function ($scope, $http, jsonProFightsFactory) {
     
+    $scope.copy;
+
     jsonProFightsFactory.getFights().then(function (response) {
         $scope.fights = response.data;
 
         $scope.copy = $scope.fights;
     });
-        
-
-
+    
     //TODO filter by year / decade  
 
     //infoClick
-
     $scope.infoClick = function (index) {
-
-
-
+        
     };
-
-
     
     $scope.fighterFilterClick = function (name) {
 
@@ -30,6 +25,8 @@
                 $scope.fights[i].Show = null;
             }
         };
+
+        $scope.fights = $scope.copy;
     };
 
     $scope.refereeFilterClick = function (name) {
@@ -42,6 +39,8 @@
                 $scope.fights[i].Show = null;
             }
         };
+
+        $scope.fights = $scope.copy;
     };
 
     $scope.JudgeFilterClick = function (name, index) {
@@ -54,6 +53,7 @@
                 $scope.fights[i].Show = null;
             }
         };
+        $scope.fights = $scope.copy;
     };
 
     $scope.VenueFilterClick = function (name, index) {
@@ -66,6 +66,7 @@
                 $scope.fights[i].Show = null;
             }
         };
+        $scope.fights = $scope.copy;
     };
 
     $scope.CityFilterClick = function (name, index) {
@@ -99,6 +100,18 @@
             var item = $scope.fights[i];
 
             if (item.Country != name) {
+                $scope.fights[i].Show = null;
+            }
+        };
+    };
+
+    $scope.promoterFilterClick = function (name) {
+
+        for (var i = 0, len = $scope.fights.length; i < len; i++) {
+
+            var item = $scope.fights[i];
+
+            if (item.PromoterSecond != name) {
                 $scope.fights[i].Show = null;
             }
         };

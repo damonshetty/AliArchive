@@ -12,12 +12,13 @@ namespace AliArchive.Repository.EntityFramework
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagram
+    public partial class MatchJudge
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int FightID { get; set; }
+        public int ActorID { get; set; }
+        public string Score { get; set; }
+    
+        public virtual Actor Actor { get; set; }
+        public virtual Fight Fight { get; set; }
     }
 }
