@@ -3,19 +3,10 @@
 <html ng-app="aliApp">
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Muhammad Ali Archive</title>
-    <meta name="description" content="The Best Muhammad Ali Boxing Fight Record. Boxing results, fights, professional, amateur, exhibitions, commerical, other" />
+    <title>Muhammad Ali Boxing Archive</title>
+    <meta name="description" content="The Best Muhammad Ali Boxing Fight Record. Boxing results, statistics, fights, professional, amateur, exhibitions, commerical, other" />
     @*@Scripts.Render("~/bundles/bootstrap")*@
-
     @Scripts.Render("~/bundles/angularjs")
-    <script src="~/Scripts/app/app.js"></script>
-
-    <script src="~/Scripts/controllers/proCtrl.js"></script>
-    <script src="~/Scripts/controllers/amateurCtrl.js"></script>
-
-    <script src="~/Scripts/factories/jsonProFightsFactory.js"></script>
-    <script src="~/Scripts/factories/jsonAmateurFightsFactory.js"></script>
-
     @Styles.Render("~/Content/css")
     <base href="/">
 </head>
@@ -46,9 +37,7 @@
         </div>
     </div>
     <div class="container">
-        <h1>Ali Archive AngularJS Version</h1>
-        <h2>This website is making a comeback.</h2>
-        <p>Please check back soon.</p>
+        <h1>Ali Archive - This website is making a comeback. <span class="small">Please check back soon.</span></h1>
         <p>RECORD: 61 Fights / 56 Wins (37 by KO) / 5 Losses</p>
 
         <div ng-view></div>

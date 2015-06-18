@@ -51,6 +51,8 @@ namespace AliArchive.Repository.EntityFramework
         public Nullable<int> NumberUSClosedCircuitLocation { get; set; }
         public Nullable<int> NumberOfBroadcastCountries { get; set; }
         public string Notes { get; set; }
+        public string RefScore { get; set; }
+        public Nullable<int> USAudience { get; set; }
     
         public virtual Actor Actor { get; set; }
         public virtual Actor Actor1 { get; set; }

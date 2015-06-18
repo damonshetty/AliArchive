@@ -1,7 +1,7 @@
-﻿window.app.controller('amateurCtrl', function ($scope, $http, jsonAmateurFightsFactory) {
+﻿window.app.controller('amateurCtrl', ['$scope', '$http', 'jsonAmateurFightsFactory', function ($scope, $http, jsonAmateurFightsFactory) {
     
     jsonAmateurFightsFactory.getFights().then(function (response) {
         $scope.amateurFights = response.data;
     });
 
-});
+}]);

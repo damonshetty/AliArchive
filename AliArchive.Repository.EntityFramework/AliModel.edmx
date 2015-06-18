@@ -97,6 +97,7 @@
           <Property Name="Province" Type="nvarchar" MaxLength="50" />
           <Property Name="AlisWeight" Type="decimal" Precision="5" Scale="2" />
           <Property Name="OpponentsWeight" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="RefScore" Type="nvarchar" MaxLength="10" />
           <Property Name="Result" Type="nvarchar" MaxLength="50" />
           <Property Name="ResultDescription" Type="int" />
           <Property Name="Rounds" Type="int" />
@@ -106,6 +107,7 @@
           <Property Name="RefereeID" Type="int" />
           <Property Name="Alias" Type="nvarchar" MaxLength="100" />
           <Property Name="Attendence" Type="int" />
+          <Property Name="USAudience" Type="int" />
           <Property Name="WorlwideAudience" Type="int" />
           <Property Name="LiveGate" Type="decimal" Precision="18" Scale="0" />
           <Property Name="Promoter" Type="int" />
@@ -791,6 +793,8 @@
           <NavigationProperty Name="Venue" Relationship="AliData2012Model.FK_Fight_Venue" FromRole="Fight" ToRole="Venue" />
           <NavigationProperty Name="MatchJudges" Relationship="AliData2012Model.FK_FightJudge_Fight" FromRole="Fight" ToRole="MatchJudge" />
           <NavigationProperty Name="Belts" Relationship="AliData2012Model.FightBelt" FromRole="Fight" ToRole="Belt" />
+          <Property Name="RefScore" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="USAudience" Type="Int32" />
         </EntityType>
         <EntityType Name="MatchJudge">
           <Key>
@@ -1183,6 +1187,8 @@
           <EntitySetMapping Name="Fights">
             <EntityTypeMapping TypeName="AliData2012Model.Fight">
               <MappingFragment StoreEntitySet="Fight">
+                <ScalarProperty Name="USAudience" ColumnName="USAudience" />
+                <ScalarProperty Name="RefScore" ColumnName="RefScore" />
                 <ScalarProperty Name="Notes" ColumnName="Notes" />
                 <ScalarProperty Name="NumberOfBroadcastCountries" ColumnName="NumberOfBroadcastCountries" />
                 <ScalarProperty Name="NumberUSClosedCircuitLocation" ColumnName="NumberUSClosedCircuitLocation" />

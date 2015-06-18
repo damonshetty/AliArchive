@@ -17,7 +17,12 @@ namespace AliArchive.UI.Web.MVC
 
             bundles.Add(new ScriptBundle("~/bundles/angularjs").Include(
                         "~/Scripts/angular.js",
-                        "~/Scripts/angular-route.js"));
+                        "~/Scripts/angular-route.js",
+                        "~/Scripts/app/app.js",
+                        "~/Scripts/controllers/proCtrl.js",
+                        "~/Scripts/controllers/amateurCtrl.js",
+                        "~/Scripts/factories/jsonProFightsFactory.js",
+                        "~/Scripts/factories/jsonAmateurFightsFactory.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
