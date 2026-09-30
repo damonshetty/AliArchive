@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comeback</title>
+    <link rel="stylesheet" href="Content/game.css" />
+</head>
+<body class="cb-standalone">
+    <div id="comeback-root" class="comeback">
+        <header class="cb-header">
+            <div>
+                <p class="cb-kicker">AliArchive</p>
+                <h1>Comeback</h1>
+            </div>
+            <div class="cb-best">Best <strong data-best>0</strong></div>
+        </header>
+        <div class="cb-stage">
+            <canvas width="360" height="640" aria-label="Comeback. Steer with the arrow keys or hold on the playfield."></canvas>
+            <div class="cb-float">
+                <div>
+                    <strong data-score>0</strong>
+                    <small>score <span class="cb-combo" data-combo hidden>x1</span></small>
+                </div>
+                <div data-lives class="cb-lives" aria-label="Lives">▲ ▲ ▲</div>
+            </div>
+            <div class="cb-alert" data-comeback hidden>
+                <div class="cb-alert-row">
+                    <strong>COMEBACK</strong>
+                    <span data-comeback-count>0/3</span>
+                </div>
+                <div class="cb-meter"><i data-meter></i></div>
+            </div>
+            <div class="cb-overlay" data-overlay>
+                <div class="cb-panel" data-panel="ready">
+                    <h2>COMEBACK</h2>
+                    <p>Drift through the wreckage and grab shards. When you hit, collect 3 shards before the ring runs out.</p>
+                    <button type="button" class="cb-play" data-play>Play</button>
+                </div>
+                <div class="cb-panel" data-panel="paused" hidden>
+                    <h2>PAUSED</h2>
+                    <p>The archive can wait.</p>
+                    <button type="button" class="cb-play" data-resume>Resume</button>
+                </div>
+                <div class="cb-panel" data-panel="over" hidden>
+                    <p class="cb-final" data-final>0</p>
+                    <p>Best <span data-best-over>0</span></p>
+                    <p class="cb-record" data-record hidden>New record</p>
+                    <button type="button" class="cb-play" data-again>Play again</button>
+                </div>
+            </div>
+        </div>
+        <p class="cb-help">Arrows or A and D to drift. Hold on the field to steer. P pauses, M mutes, R restarts. After a hit, grab the gold shards to come back.</p>
+        <div class="cb-actions">
+            <button type="button" data-pause>Pause</button>
+            <button type="button" data-mute aria-pressed="false">Sound on</button>
+            <button type="button" data-restart>Restart</button>
+        </div>
+        <p class="cb-live" data-live aria-live="polite"></p>
+    </div>
+    <script src="Scripts/comeback-game.js"></script>
+</body>
+</html>
