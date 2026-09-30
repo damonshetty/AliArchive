@@ -26,5 +26,12 @@ namespace AliArchive.Controllers
 
             return View();
         }
+
+        public ActionResult Game()
+        {
+            ViewBag.Title = "Comeback";
+
+            return View();
+        }
     }
 }

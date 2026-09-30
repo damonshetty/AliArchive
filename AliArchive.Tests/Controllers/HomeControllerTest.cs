@@ -50,5 +50,18 @@ namespace AliArchive.Tests.Controllers
             // Assert
             Assert.IsNotNull(result);
         }
+
+        [TestMethod]
+        public void Game()
+        {
+            // Arrange
+            HomeController controller = new HomeController();
+
+            // Act
+            ViewResult result = controller.Game() as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
     }
 }
